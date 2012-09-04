@@ -1,13 +1,4 @@
-<% @posts.each do |post| %>
-  <div id="post">
-    <div id="title"><%= link_to(post.title, post) %></div>
-    <div id="content"><%= post.content %></div>
-    <span id="date"><%= post.date %></span>
-    <span><%= link_to 'Show', post %></span>
-    <span><%= link_to 'Edit', edit_post_path(post) %></span>
-    <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-  </div>
-<% end %>
+<%= render @posts %>
 
 
 

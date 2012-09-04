@@ -20,9 +20,24 @@
   padding-bottom: 10px;
 }
 
+#post #title a {
+  text-decoration: none;
+}
+
+#post #title a:hover {
+  text-decoration: underline;
+  background-color: #fff;
+  color: #0071BB;
+}
+
 #post #content {
   padding-left: 20px;
   font: 1.1em 'PT Sans', sans-serif;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 10px;
+}
+
+blockquote {
+  border-left: 8px solid #0071BB;
+  padding-left: 10px;
 }
