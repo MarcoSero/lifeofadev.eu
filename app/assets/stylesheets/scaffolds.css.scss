@@ -1,11 +1,11 @@
 body {
-  color: #333;
+  color: #898989;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 20px;
   margin: 0 auto;
-  width: 900px;
-  background-color: #ececec;
+  background: url(/assets/light-grey-texture.jpg) repeat;
+  min-width: 800px;
 }
 
 p, ol, ul, td {
@@ -70,12 +70,19 @@ div {
   }
 }
 
-#sidebar {
-  background: white;
+#left {
+  background: #fff;
   float: left;
   padding: 15px 0 0 0;
   width: 260px;
   position: fixed;
   z-index: 0;
   min-height: 1080px;
+  padding-left: 10%;
+}
+
+#center {
+  margin-right: 8%;
+  width: 50%;
+  float: right;
 }

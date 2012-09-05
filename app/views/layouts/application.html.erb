@@ -9,10 +9,17 @@
 <body>
 
 
-  <div id="sidebar">
+  <div id="left">
+    <%= image_tag("logo.png", :border=>0, :class => 'logo') %>
+  </div>
+  <div id="right">
     
   </div>
-  <%= yield %>
+
+  <div id="center">
+    <%= yield %>
+  </div>
+  
 
 </body>
 </html>
