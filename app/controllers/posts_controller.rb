@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
+  skip_before_filter :authorize
+
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
-
+  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
