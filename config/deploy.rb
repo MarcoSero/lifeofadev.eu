@@ -18,6 +18,7 @@ role :db, domain, :primary => true
 # you might need to set this if you aren't seeing password prompts
 #default_run_options[:pty] = true
 
+
 # As Capistrano executes in a non-interactive mode and therefore doesn't cause
 # any of your shell profile scripts to be run, the following might be needed
 # if (for example) you have locally installed gems or applications.  Note:
