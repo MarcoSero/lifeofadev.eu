@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title><%=h yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= auto_discovery_link_tag :atom, "/feed" %>
@@ -10,13 +11,22 @@
 </head>
 <body>
 
-
   <div id="left">
-    <div id="main-logo"><%= image_tag("logo.png", :border=>0, :class => 'logo') %> </div>
+    <div id="main-logo"><%= link_to image_tag("logo.png", :border=>0, :class => 'logo'), root_url %> </div>
     <div id="main-text"> Life and thoughts of a Developer (and student)</div>
-  </div>
-  <div id="right">
-    
+
+    <% if session[:user_id] %>
+      <%= link_to 'Home', root_url %> <br>
+      <%= link_to 'Posts', posts_url %> <br>
+      <%= link_to 'Users', users_url %> <br>
+      <%= link_to 'Admin', admin_url %> <br>
+      <%= link_to 'Logout', logout_url, :method => :delete %> <br>
+    <% end %>
+    <br>
+
+    <div id="footer">
+      © 2012 <em>Life of a Dev</em>
+    </div>
   </div>
 
   <div id="center">

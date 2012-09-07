@@ -6,6 +6,9 @@
   margin: 20px;
   background-color: #fff;
   padding: 20px;
+  border: 1px solid #d3d3d3;
+  box-shadow: 5px 5px 10px #d3d3d3;
+  -webkit-box-shadow: 5px 5px 10px #d3d3d3;
 }
 
 #post #title {
@@ -20,6 +23,7 @@
 
 #post #title a {
   text-decoration: none;
+  color: #555;
 }
 
 #post #title a:hover {
@@ -30,7 +34,7 @@
 
 #post #content {
   padding-left: 20px;
-  font: 1.1em 'PT Sans', sans-serif;
+  font: 16px 'PT Sans', sans-serif;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 10px;
 }
@@ -41,5 +45,17 @@ blockquote {
 }
 
 #post #info {
-	float: right;
+	margin-top: 20px;
+	text-align: right;
+	font-size: 11px;
 }
+
+.label-comments {
+	background: url(comments.png) no-repeat;
+}
+
+.label-calendar {
+	background: url(calendar.png) no-repeat;
+}
+
+

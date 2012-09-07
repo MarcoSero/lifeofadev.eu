@@ -1,13 +1,12 @@
-<div>
+<div id="session">
+  <h2>Please log in</h2>
 
   <% if flash[:alert] %>
     <p id="notice"><%= flash[:alert] %></p>
   <% end %>
 
   <%= form_tag do %>
-    <fieldset>
-      <legend>Please Log In</legend>
-
+    <div class="fields">
       <div class="field">
         <label for="username">Username:</label>
         <%= text_field_tag :username, params[:username] %>
@@ -17,10 +16,10 @@
         <label for="password">Password:</label>
         <%= password_field_tag :password, params[:password] %>
       </div>
-  
-      <div class="actions">
-        <%= submit_tag "Login" %>
-      </div>
-    </fieldset>
+    </div> 
+
+    <div class="submit-button">
+      <%= button_submit_tag "Login", :class => 'button-pill' %>
+    </div>
   <% end %>
 </div>

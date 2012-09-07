@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#admin {
+  margin: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #d3d3d3;
+  box-shadow: 5px 5px 10px #d3d3d3;
+  -webkit-box-shadow: 5px 5px 10px #d3d3d3;
+}
+
 #admin #posts {
-	width: 700px;
 }
 
 #admin #posts th {
@@ -13,5 +21,15 @@
 
 #admin #posts th#title {
 	font-weight: bold;
-	width: 250px;
+	width: 200px;
+}
+
+#admin #posts th {
+	padding-right: 8px;
+	padding-bottom: 4px;
+}
+
+#admin #posts td {
+	padding-right: 8px;
+	padding-bottom: 4px;
 }

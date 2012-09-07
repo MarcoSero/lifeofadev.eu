@@ -8,6 +8,26 @@ body {
   min-width: 900px;
 }
 
+h1 {
+	font-size: 2em;
+  	margin-bottom: 10px;
+  	color: #6f6f6f;
+  	font-weight: bold;
+  	font-family: 'Patua One', sans-serif;
+  	border-bottom: 1px dotted #d3d3d3;
+  	padding-bottom: 10px;
+}
+
+h2 {
+	font-size: 1.5em;
+  	margin-bottom: 10px;
+  	color: #6f6f6f;
+  	font-weight: bold;
+  	font-family: 'Patua One', sans-serif;
+  	border-bottom: 1px dotted #d3d3d3;
+  	padding-bottom: 10px;
+}
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -21,13 +41,12 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #0071BB;
   &:visited {
-    color: #666;
+    color: #0071BB;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #0071BB;
   }
 }
 
@@ -37,73 +56,70 @@ div {
   }
 }
 
+.submit-button {
+	width: 100px;
+	margin: 0 auto;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+
 #notice {
   color: green;
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+	padding: 2px;
+	background-color: red;
+	display: table;
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
-  }
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+
 }
 
 #left {
-  background: #fff;
-  float: left;
-  padding: 15px 0 0 0;
-  width: 260px;
-  position: fixed;
-  z-index: 0;
-  min-height: 1080px;
-  padding-left: 10%;
+  	background: #fff;
+  	float: left;
+  	padding: 15px 0 0 0;
+  	width: 260px;
+  	position: fixed;
+  	z-index: 0;
+  	min-height: 1080px;
+  	padding-left: 10%;
+	border-right: 1px solid #d3d3d3;
 }
 
 #center {
   margin-right: 3%;
   width: 60%;
   float: right;
-}
-
-form {
-	width: 300px;
-	margin: 40px;
+  margin-top: 10px;
 }
 
 div.field {
+	width: 50%;
+	margin: 0 auto;
+	text-align: right;
+	padding: 5px;
+}
+
+.float-right {
 	float: right;
 }
 
 #main-logo {
-	margin: 20px;
+	margin-right: 20px;
 }
 
 #main-text	 {
 	float: none;
-	margin: 20px;
+	margin: 0 60px 0 0;
 	text-align: center;
-	font-size: 17px;
-	font-family: 'PT Sans', sans-serif;
+	font-size: 15px;
+	border-bottom: 1px dotted #d3d3d3;
+	padding-bottom: 20px;
+}
+
+#footer {
+	font-size: 11px;
 }
