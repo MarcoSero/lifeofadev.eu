@@ -1,10 +1,10 @@
 <div id="post">
     <div id="title"><%= link_to(post.title, post) %></div>
     <div id="content"><%= raw post.content %></div>
-    <span id="date"><%= post.date %></span>
-    <span><%= link_to 'Show', post %></span>
-    <span><%= link_to 'Edit', edit_post_path(post) %></span>
-    <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <div id="info">Written by <%= User.find_by_id(post.user_id).username %>, <%= post.created_at.strftime("%d %b %Y") %></div>
+    <% if post.user_id == session[:user_id] %>
+      <span><%= link_to 'Edit', edit_post_path(post) %></span>
+    <% end %>
   
   <% if request.env['PATH_INFO'] == post_path(post) %>
   <div id="disqus_thread"></div>

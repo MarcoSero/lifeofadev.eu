@@ -1,3 +1,17 @@
 // Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#admin #posts {
+	width: 700px;
+}
+
+#admin #posts th {
+	font-weight: bold;
+	text-align: left;
+}
+
+#admin #posts th#title {
+	font-weight: bold;
+	width: 250px;
+}

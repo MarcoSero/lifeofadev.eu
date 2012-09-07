@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   before_filter :authorize
   protect_from_forgery
 
+  def current_user
+    User.find_by_id(session[:user_id])
+  end
+
   protected
 
     def authorize
