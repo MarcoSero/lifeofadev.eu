@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_filter :authorize, :only => [:index, :show]
+  skip_before_filter :authorize, :only => [:index, :show, :feed]
 
   # GET /posts
   # GET /posts.json
@@ -84,6 +84,24 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
+    end
+  end
+
+  def feed
+    # this will be the name of the feed displayed on the feed reader
+    @title = "Life of a Dev"
+
+    # the news items
+    @posts = Post.order("updated_at DESC")
+
+    # this will be our Feed's update timestamp
+    @updated = @posts.first.updated_at unless @posts.empty?
+
+    respond_to do |format|
+      format.atom { render :layout => false }
+
+      # we want the RSS feed to redirect permanently to the ATOM feed
+      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
     end
   end
 end
