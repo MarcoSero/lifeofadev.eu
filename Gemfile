@@ -45,3 +45,4 @@ gem 'capistrano'
 # To use debugger
 # gem 'debugger'
 
+gem 'acts-as-taggable-on', '~> 2.3.1'

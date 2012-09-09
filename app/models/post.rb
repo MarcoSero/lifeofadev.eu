@@ -6,6 +6,10 @@ class Post < ActiveRecord::Base
 
   before_create :create_slug
   before_create :markdown_to_html
+
+  # Alias for <tt>acts_as_taggable_on :tags</tt>:
+  acts_as_taggable
+  acts_as_taggable_on :categories
   
   def to_param
     slug

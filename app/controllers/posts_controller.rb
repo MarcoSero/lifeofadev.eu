@@ -45,6 +45,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.category_list = "ciao, marco"
 
     respond_to do |format|
       if @post.save
