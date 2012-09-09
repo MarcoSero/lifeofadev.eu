@@ -24,6 +24,8 @@ gem 'jquery-rails'
 
 gem "css3buttons", "~> 1.0.1"
 
+gem "rdiscount", "~> 1.6.8"
+
 group :production do
   gem 'mysql'
 end
