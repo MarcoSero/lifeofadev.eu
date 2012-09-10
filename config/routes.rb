@@ -20,6 +20,8 @@ Blog::Application.routes.draw do
 
   resources :posts
 
+  resources :categories
+
   resources :posts
     match '/feed' => 'posts#feed',
       :as => :feed,
