@@ -11,25 +11,30 @@
   -webkit-box-shadow: 5px 5px 10px #d3d3d3;
 }
 
-#admin #posts {
+#admin table {
 }
 
-#admin #posts th {
+#admin th {
 	font-weight: bold;
 	text-align: left;
 }
 
-#admin #posts th#title {
+#admin th.title {
 	font-weight: bold;
 	width: 200px;
 }
 
-#admin #posts th {
+#admin th.username {
+	font-weight: bold;
+	width: 200px;
+}
+
+#admin th {
 	padding-right: 8px;
 	padding-bottom: 4px;
 }
 
-#admin #posts td {
+#admin td {
 	padding-right: 8px;
 	padding-bottom: 4px;
 }

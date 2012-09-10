@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :posts, :dependent => :destroy
 
   validates :username, :presence => true, :uniqueness => true
-  validates :password, :confirmation => true
+  validates :password, :confirmation => true, :length => {:within => 8..40}
   attr_accessor :password_confirmation
   attr_reader   :password
 

@@ -1,6 +1,12 @@
 <h1><%=h content_for(:title, "Users") %></h1>
 
-<p id="notice"><%= notice %></p>
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:alert] %>
+  <p id="alert"><%= flash[:alert] %></p>
+<% end %>
 
 <table>
   <tr>

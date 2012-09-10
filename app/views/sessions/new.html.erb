@@ -1,20 +1,22 @@
 <div id="session">
   <h2>Please log in</h2>
 
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
+
   <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
   <% end %>
 
   <%= form_tag do %>
     <div class="fields">
       <div class="field">
-        <label for="username">Username:</label>
-        <%= text_field_tag :username, params[:username] %>
+        <%= text_field_tag :username, params[:username], :placeholder => 'username' %>
       </div>
 
       <div class="field">
-        <label for="password">Password:</label>
-        <%= password_field_tag :password, params[:password] %>
+        <%= password_field_tag :password, params[:password], :placeholder => 'password' %>
       </div>
     </div> 
 

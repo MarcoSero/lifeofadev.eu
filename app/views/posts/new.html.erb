@@ -1,5 +1,13 @@
-<h1><%=h content_for(:title, "New post") %></h1>
+
+<% content_for :title, "New Post" %>
+<h1>New Post</h1>
+
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:alert] %>
+  <p id="alert"><%= flash[:alert] %></p>
+<% end %>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', posts_path %>

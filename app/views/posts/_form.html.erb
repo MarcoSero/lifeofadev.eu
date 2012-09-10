@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, :html => { :class => 'new-post' }) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,17 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_area :title %>
+  <div class="title-field">
+    <%= f.text_field :title, :placeholder => 'Title' %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+  <div class="content-field">
+    <%= f.text_area :content, :placeholder => 'Insert your post *in markdown syntax post here' %>
   </div>
   <div class="actions">
     <%= f.hidden_field :user_id, :value => session[:user_id] %>
-    <%= f.submit %>
+    <%= big_primary_button_submit_tag "Publish" %>
   </div>
 
 <% end %>

@@ -57,14 +57,20 @@ div {
 }
 
 .submit-button {
-	width: 100px;
 	margin: 0 auto;
-	padding-top:20px;
-	padding-bottom: 20px;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom: 10px;
 }
 
 #notice {
   color: green;
+	text-align: center;
+}
+
+#alert {
+  color: red;
+	text-align: center;
 }
 
 .field_with_errors {

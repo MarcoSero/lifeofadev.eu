@@ -59,4 +59,29 @@ blockquote {
 	background: url(calendar.png) no-repeat;
 }
 
+form.new-post {
 
+}
+
+.title-field {
+	text-align: center;
+}
+
+#post_title {
+	width: 70%;
+	color: #93b0ff;
+}
+
+.content-field {
+	text-align: center;
+}
+
+#post_content {
+	width: 70%;
+	color: #93b0ff;
+	resize: vertical;
+}
+
+div.actions {
+	text-align: center;
+}

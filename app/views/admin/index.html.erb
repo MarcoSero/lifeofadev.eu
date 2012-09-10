@@ -2,13 +2,13 @@
 
 <div id="admin">
 <h1>Super Secret Administration Panel</h1>
-<br><br>
-<div class="float-right"><%= link_to 'New post', 'posts/new', :method => :get, :class => 'button icon add'  %></div>
+<br>
+<div class="float-right"><%= link_to 'New post', 'posts/new', :class => 'button icon add'  %></div>
 
 <h2>Posts</h2>
 <table id="posts">
   <tr>
-    <th id="title">Title</th>
+    <th class="title">Title</th>
     <th>Created</th>
     <th>Updated</th>
     <th>Author</th>
@@ -26,4 +26,25 @@
     </tr>
   <% end %>
 </table>
+
+<h2>Users</h2>
+<table id="users">
+  <tr>
+    <th class="username">Username</th>
+    <th>First</th>
+    <th>Second</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td> <%= user.username %> </td>
+      <td> <%= user.first_name %> </td>
+      <td> <%= user.second_name %> </td>
+      <td><%= search_button_link_to 'Show', user %></td>
+      <td><%= edit_button_link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= trash_button_link_to 'Destroy', user, :method => :delete, data: { confirm: 'Are you sure?' }  %></td>
+    </tr>
+  <% end %>
+</table>
+
 </div>
