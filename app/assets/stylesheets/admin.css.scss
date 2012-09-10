@@ -22,11 +22,24 @@
 
 #admin th.title {
 	font-weight: bold;
+	width: 260px;
 }
 
 #admin th.username {
 	font-weight: bold;
+	width: 150px;
 }
+
+#admin th.first {
+	font-weight: bold;
+	width: 150px;
+}
+
+#admin th.second {
+	font-weight: bold;
+	width: 150px;
+}
+
 
 #admin th {
 	padding-right: 8px;

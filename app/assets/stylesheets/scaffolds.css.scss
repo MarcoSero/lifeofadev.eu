@@ -1,11 +1,21 @@
 body {
-  color: #4c4c4c;
+	margin: 0 auto;
+	width: 1000px;
+	background: url(body.png) scroll repeat top center #E4E4E4;
+	color: #4c4c4c;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "footer-logoHelvetica Neue", "Segoe UI", "Helvetica", "Arial", "Sans Serif";
   font-size: 15px;
   line-height: 20px;
-  margin: 0 auto;
-  background: url(/assets/light-grey-texture.jpg) repeat;
-  min-width: 900px;
+}
+
+#left {
+	float: left;
+	width: 250px;
+}
+
+#center {
+	float: right;
+	width: 700px;
 }
 
 h1 {
@@ -69,25 +79,6 @@ div {
 
 #error_explanation {
 
-}
-
-#left {
-  	background: #fff;
-  	float: left;
-  	padding: 15px 0 0 0;
-  	width: 260px;
-  	position: fixed;
-  	z-index: 0;
-  	min-height: 1080px;
-  	padding-left: 5%;
-	border-right: 1px solid #d3d3d3;
-}
-
-#center {
-  margin-right: 3%;
-  width: 60%;
-  float: right;
-  margin-top: 10px;
 }
 
 div.field {
