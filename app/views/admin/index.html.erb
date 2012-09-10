@@ -1,50 +1,74 @@
 <% content_for :title, "Admin" %>
 
+<% if flash[:notice] %>
+  <div class="alert alert-info">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= raw flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= raw flash[:alert] %>
+  </div>
+<% end %>
+
 <div id="admin">
 <h1>Super Secret Administration Panel</h1>
 <br>
 <div class="float-right"><%= link_to 'New post', 'posts/new', :class => 'button icon add'  %></div>
 
-<h2>Posts</h2>
-<table id="posts">
-  <tr>
-    <th class="title">Title</th>
-    <th>Created</th>
-    <th>Updated</th>
-    <th>Author</th>
-  </tr>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
+    <li><a href="#users" data-toggle="tab">Users</a></li>
+  </ul>
+  <div class="tab-content">
 
-  <% @posts.each do |post| %>
-    <tr>
-      <td> <%= post.title %> </td>
-      <td> <%= post.created_at.strftime("%d/%m/%y") %> </td>
-      <td> <%= post.updated_at.strftime("%d/%m/%y") %> </td>
-      <td> <%= User.find_by_id(post.user_id).username %> </td>
-      <td><%= search_button_link_to 'Show', post %></td>
-      <td><%= edit_button_link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= trash_button_link_to 'Destroy', post, :method => :delete, data: { confirm: 'Are you sure?' }  %></td>
-    </tr>
-  <% end %>
-</table>
+    <div class="tab-pane active" id="posts">
+      <table id="posts">
+        <tr>
+          <th class="title">Title</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th>Author</th>
+        </tr>
 
-<h2>Users</h2>
-<table id="users">
-  <tr>
-    <th class="username">Username</th>
-    <th>First</th>
-    <th>Second</th>
-  </tr>
+        <% @posts.each do |post| %>
+          <tr>
+            <td> <%= post.title %> </td>
+            <td> <%= post.created_at.strftime("%d/%m/%y") %> </td>
+            <td> <%= post.updated_at.strftime("%d/%m/%y") %> </td>
+            <td> <%= User.find_by_id(post.user_id).username %> </td>
+            <td><%= search_button_link_to 'Show', post %></td>
+            <td><%= edit_button_link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= trash_button_link_to 'Destroy', post, :method => :delete, data: { confirm: 'Are you sure?' }  %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
 
-  <% @users.each do |user| %>
-    <tr>
-      <td> <%= user.username %> </td>
-      <td> <%= user.first_name %> </td>
-      <td> <%= user.second_name %> </td>
-      <td><%= search_button_link_to 'Show', user %></td>
-      <td><%= edit_button_link_to 'Edit', edit_user_path(user) %></td>
-      <td><%= trash_button_link_to 'Destroy', user, :method => :delete, data: { confirm: 'Are you sure?' }  %></td>
-    </tr>
-  <% end %>
-</table>
+    <div class="tab-pane" id="users">
+      <table id="users">
+        <tr>
+          <th class="username">Username</th>
+          <th>First</th>
+          <th>Second</th>
+        </tr>
 
+        <% @users.each do |user| %>
+          <tr>
+            <td> <%= user.username %> </td>
+            <td> <%= user.first_name %> </td>
+            <td> <%= user.second_name %> </td>
+            <td><%= search_button_link_to 'Show', user %></td>
+            <td><%= edit_button_link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= trash_button_link_to 'Destroy', user, :method => :delete, data: { confirm: 'Are you sure?' }  %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
 </div>

@@ -1,7 +1,7 @@
 body {
-  color: #898989;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  color: #4c4c4c;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "footer-logoHelvetica Neue", "Segoe UI", "Helvetica", "Arial", "Sans Serif";
+  font-size: 15px;
   line-height: 20px;
   margin: 0 auto;
   background: url(/assets/light-grey-texture.jpg) repeat;
@@ -9,29 +9,17 @@ body {
 }
 
 h1 {
-	font-size: 2em;
-  	margin-bottom: 10px;
-  	color: #6f6f6f;
-  	font-weight: bold;
-  	font-family: 'Patua One', sans-serif;
   	border-bottom: 1px dotted #d3d3d3;
-  	padding-bottom: 10px;
 }
 
 h2 {
-	font-size: 1.5em;
-  	margin-bottom: 10px;
-  	color: #6f6f6f;
-  	font-weight: bold;
-  	font-family: 'Patua One', sans-serif;
   	border-bottom: 1px dotted #d3d3d3;
-  	padding-bottom: 10px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "footer-logoHelvetica Neue", "Segoe UI", "Helvetica", "Arial", "Sans Serif";
+  font-size: 15px;
+  line-height: 22px;
 }
 
 pre {
@@ -113,6 +101,10 @@ div.field {
 	float: right;
 }
 
+.float-left {
+	float: left;
+}
+
 #main-logo {
 	margin-right: 20px;
 }
@@ -127,5 +119,5 @@ div.field {
 }
 
 #footer {
-	font-size: 11px;
+	font-size: 13px;
 }

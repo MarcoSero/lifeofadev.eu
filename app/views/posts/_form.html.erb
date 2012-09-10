@@ -15,8 +15,14 @@
     <%= f.text_field :title, :placeholder => 'Title' %>
   </div>
   <div class="content-field">
-    <%= f.text_area :content, :placeholder => 'Insert your post *in markdown syntax post here' %>
+    <%= f.text_area :content, :placeholder => 'Post in *markdown* syntax post here' %>
   </div>
+
+  <div class="categories-field">
+    <span class="help-inline">Categories:&nbsp;&nbsp;</span>
+    <%= f.text_field :category_list, :placeholder => 'Categories separated by commas', :class => 'input-xlarge' %>
+  </div>
+
   <div class="actions">
     <%= f.hidden_field :user_id, :value => session[:user_id] %>
     <%= big_primary_button_submit_tag "Publish" %>

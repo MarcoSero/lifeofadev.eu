@@ -1,13 +1,13 @@
 require 'rdiscount'
 
 class Post < ActiveRecord::Base
-  attr_accessible :content, :title, :user_id
+  attr_accessible :content, :title, :user_id, :category_list, :tag_list
   belongs_to :user
 
   before_create :create_slug
   before_create :markdown_to_html
 
-  # Alias for <tt>acts_as_taggable_on :tags</tt>:
+  # Alias for acts_as_taggable_on :tags
   acts_as_taggable
   acts_as_taggable_on :categories
   

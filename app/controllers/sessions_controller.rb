@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create
     if user = User.authenticate(params[:username], params[:password])
       session[:user_id] = user.id
-      redirect_to admin_url
+      redirect_to admin_url, :notice => "Welcome on board, <strong>#{user.username}</strong>!"
     else
       redirect_to login_url, :alert => "Invalid user/password combination"
     end
