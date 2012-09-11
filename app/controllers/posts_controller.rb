@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("created_at DESC").find_all_by_draft(false)
+    @posts = Post.order("created_at DESC").find_all_by_published(true)
   
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.find_by_slug!(params[:id])
 
     # not show drafts to visitors
-    if @post.draft && !session[:user_id]
+    if !@post.published && !session[:user_id]
       not_found
     end
 

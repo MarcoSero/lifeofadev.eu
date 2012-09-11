@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.create(username: 'marco', password: "rtfgvb90", password_confirmation: "rtfgvb90", email: "marco@marcosero.com")
+user = User.create(username: 'marco', password: "marcosero", password_confirmation: "marcosero", email: "marco@marcosero.com")
 
 Post.create(title: "Event Detection", content_md: "## DBSCAN Algorithm in Map/Reduce logic, implemented with Hadoop and MongoDB
 
@@ -55,4 +55,4 @@ Take a look in `scripts` folder.
 ## At work
 This algorithm is currently running in our server. Visit [eventdetection.marcosero.com](http://eventdetection.marcosero.com) to view my project.
 
-![](https://raw.github.com/MarcoSero/Event-Detection/master/images/screenshot.png)", user_id: user.id)
+![](https://raw.github.com/MarcoSero/Event-Detection/master/images/screenshot.png)", user_id: user.id, published: true)

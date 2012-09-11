@@ -13,6 +13,8 @@ set :application, 'lifeofadev'
 set :repository, "ms:git/#{application}.git"
 set :deploy_to, "/home/#{user}/public_html/#{application}" 
 
+ssh_options[:keys] = %w(~/.ssh/marcosero.pem)
+
 # distribute your applications across servers (the instructions below put them
 # all on the same server, defined above as 'domain', adjust as necessary)
 role :app, domain

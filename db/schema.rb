@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20120911162727) do
     t.integer  "user_id"
     t.text     "slug"
     t.text     "content_md"
-    t.boolean  "draft",      :default => true
+    t.boolean  "published",  :default => true
   end
 
   create_table "taggings", :force => true do |t|
@@ -47,11 +47,11 @@ ActiveRecord::Schema.define(:version => 20120911162727) do
     t.string   "second_name"
     t.string   "hashed_password"
     t.string   "salt"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.string   "email"
-    t.text     "bio"
-    t.text     "bio_md"
+    t.text     "bio",             :default => ""
+    t.text     "bio_md",          :default => ""
   end
 
 end
