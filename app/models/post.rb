@@ -25,8 +25,10 @@ class Post < ActiveRecord::Base
     end
 
     def content_markdown_to_html
-      markdown = RDiscount.new(self.content_md)
-      self.content = markdown.to_html 
+      if self.content_md
+        markdown = RDiscount.new(self.content_md)
+        self.content = markdown.to_html
+      end 
     end
   
 end

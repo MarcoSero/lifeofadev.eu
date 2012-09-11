@@ -15,5 +15,6 @@
   <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => false %>
   <%= f.input :category_list, :placeholder => 'Categories separated by commas', :label => false %>
   <%= f.input :published %>
+  <%= f.input :user_id, :as => :hidden, :input_html => { :value => session[:user_id] } %>
   <%= f.button :submit %>
 <% end %>

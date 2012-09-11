@@ -1,4 +1,5 @@
-Why start another blog? 
+Why start another blog?
+
 That's the question I made myself: why should I start a new blog? The answer is easily explained: I want a place to share and discuss with any other developer of issues, events, great tutorial and all other stuffs that concern the world of the developers.
 
 I'm a developer but first of all a student so I'll want to write about all that affect me (and I hope you too) such as web technologies, mobile platforms, software engineering, user interface design, computer networks, security, artificial intelligence... and so on, exploring a lot of fields of programming and computer science.
@@ -14,6 +15,60 @@ So, let's start!
 
 
 
+An iOS application purely in C? It's possible
+
+A question on StackOverflow caught my attention: *["How to write iOS app purely in C"](http://stackoverflow.com/questions/10289890/how-to-write-ios-app-purely-in-c/)*
+
+The first thing I thought was is theoretically possible to write a program entirely in C, because Objective-C is a superset of the C-language, but I had no idea of how I could implement it.
+
+But the [answer](http://stackoverflow.com/questions/10289890/how-to-write-ios-app-purely-in-c/10290255#10290255) gave by Richard J. Ross III is brilliant.
+
+That's an example of how good knowledge of a programming language(s) driven by an authentic curiosity, can bring to unexpected result.
+For didactic purpose this example shows ways to use object oriented techniques in a non-object oriented language like C.
+
+
+
+
+
+
+
+
+
+
+C Implementation of the A* Pathfinding Algorithm
+
+Exploring GitHub, sometimes you could find unusable software, good-for-nothing software, embarrassingly inefficient software. But a lot of times you can also find excellent software, wrote with brain and not only with keyboard.
+This is the case of the [implementation of the A*](https://github.com/BigZaphod/AStar), written by [@BigZaphod](http://twitter.com/#!/bigzaphod) (Sean Heber). Most of code is in C, for obvious reasons of efficiency. In fact efficiency is the keyword of this algorithm and its implementation.
+
+For those who don't know, A* is The algorithm to create a pathfind from a node "start" to a node "goal". It's one of the oldest algorithm but nevertheless it's still used today.
+It uses a heuristic function *h(x)* that is a sum of two cost-function: **f(x) + g(x)**, where x is the current node.
+*f(x)* is the real heuristic function that gives us an estimate of the cost to reach the goal. Conversely *g(x)* represents the cost that algorithm have done to reach the x node.
+At each step, the algorithm chooses the node with the minimum value of h(x).
+Trying to describe A* in few lines could be the hardest thing that I've tried to done in the last years, so if you wanna a more detailed description, [Wikipedia](http://en.wikipedia.org/wiki/A*_search_algorithm) could be a good point to start.
+
+In his implementation the author chose to use a binary heap to implement the priority queue of nodes and an indexed array for fast lookups of previously visited nodes. This is probably the most logical choice.
+
+> To use it, you must define 3 functions which provide information about node connectivity, sorting, and heuristics. A "node" for purposes of this implementation is simply a pointer to any data you want. You must also specify the size of the node data you're pointing to. If you're just using pointers, the size is simply something like sizeof(MyNodeStruct *), however this implementation is capable of storing whole structures (such as {int x; int y;}) as well.
+
+The source code and a full readme can be founded on BigZaphod's GitHub, where is included a Xcode's sample project that gives us an example of how to integrate it in our projects.
+
+I had a word with Sean Heber and I asked him a couple of questions about his project:
+
+*There are several different pathfinding's algorithms. Why did you choose A*?*
+
+> I'm no pathfinding expert, but all of the algorithms have a variety of tradeoffs. Usually the tradeoff is time vs. memory. A* seems to have one of the best balances of those tradeoffs in the context of games, at least, and I think that's why it's been the gold standard for so long. In a game you're often more willing to sacrifice memory if it buys you faster execution time, and that's something A* can do. A* also allows you to weight the "cost" of transitioning from one state (or cell on a map, etc) to another so in a sense it actually solves two problems - it finds a path from one state to another, and it can also find the *best* path given many possible paths of varying difficulty. Obviously that's quite useful when you're trying to get a game character to move from point A to point B in a way that doesn't seem entirely unnatural. Another advantage of A* is that by using different heuristics you can sacrifice some path optimality for speed - again with games it's often more important to compute something quickly than to compute it exactly correctly.
+
+*Why did you decide to write your own A* implementation? Did you not find one's that satisfies you?*
+
+>I didn't look for other implementations, really. The underlying point of the project was to understand how it works and the best way to do that was to just make it myself.  I also did it all in C because I decided it'd be more of a challenge that way and would really get to the meat of the details. Writing A* itself was only part of the challenge as I also had to implement bits of other algorithms like binary search and binary heap to implement the priority queue I needed for A*. I probably should have used a hash table rather than a sorted array, and I might do that some day, but for now it's been fast enough as it is.
+
+*Have you already used your code in some your projects or do you know anyone that uses it?*
+
+>I'm using it my own toy projects. Nothing has been shipped with it to my knowledge. So far it's been working great and I haven't noticed any problems. I know of at least one person who's thinking of putting it in his own game.
+
+*Thanks for your time :) *
+
+> No problem. :)
 
 
 
