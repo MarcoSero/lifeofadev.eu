@@ -40,6 +40,11 @@ set :scm_verbose, true
 set :use_sudo, false
 
 namespace :deploy do
+  desc "copy db config file"
+  task :seed do
+    run "ln -s ~/public_html/lifeofadev/database.yml #{release_path}/config/database.yml"
+  end
+
   desc "cause Passenger to initiate a restart"
   task :restart do
     run "touch #{current_path}/tmp/restart.txt" 
