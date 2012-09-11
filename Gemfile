@@ -47,3 +47,9 @@ gem 'capistrano'
 # gem 'debugger'
 
 gem 'acts-as-taggable-on', '~> 2.3.1'
+
+gem 'simple_form'
+
+gem 'email_validator', :require => 'email_validator/strict'
+
+gem 'gravatar_image_tag'

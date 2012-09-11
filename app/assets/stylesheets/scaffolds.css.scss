@@ -16,6 +16,7 @@ body {
 #center {
 	float: right;
 	width: 700px;
+	padding-top: 20px;
 }
 
 h1 {
@@ -61,26 +62,6 @@ div {
 	padding-bottom: 10px;
 }
 
-#notice {
-  color: green;
-	text-align: center;
-}
-
-#alert {
-  color: red;
-	text-align: center;
-}
-
-.field_with_errors {
-	padding: 2px;
-	background-color: red;
-	display: table;
-}
-
-#error_explanation {
-
-}
-
 div.field {
 	width: 50%;
 	margin: 0 auto;
@@ -111,4 +92,9 @@ div.field {
 
 #footer {
 	font-size: 13px;
+}
+
+.button-submit-centered {
+	text-align: center;
+	margin-right: 100px;
 }

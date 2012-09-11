@@ -1,32 +1,18 @@
-<%= form_for(@post, :html => { :class => 'new-post' }) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="title-field">
-    <%= f.text_field :title, :placeholder => 'Title' %>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
   </div>
-  <div class="content-field">
-    <%= f.text_area :content, :placeholder => 'Post in *markdown* syntax post here' %>
-  </div>
-
-  <div class="categories-field">
-    <span class="help-inline">Categories:&nbsp;&nbsp;</span>
-    <%= f.text_field :category_list, :placeholder => 'Categories separated by commas', :class => 'input-xlarge' %>
-  </div>
-
-  <div class="actions">
-    <%= f.hidden_field :user_id, :value => session[:user_id] %>
-    <%= big_primary_button_submit_tag "Publish" %>
-  </div>
-
 <% end %>
 
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title, :placeholder => 'Title', :label => false %>
+  <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => false %>
+  <%= f.input :category_list, :placeholder => 'Categories separated by commas', :label => false %>
+  <%= f.button :submit %>
+<% end %>

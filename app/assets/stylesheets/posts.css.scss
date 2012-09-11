@@ -63,23 +63,9 @@ blockquote {
 	background: url(tag.png) no-repeat;
 }
 
-form.new-post {
-
-}
-
-.title-field {
+.new_post {
+	padding-top: 10px;
 	text-align: center;
-	margin-bottom: 20px;
-}
-
-.content-field {
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-.categories-field {
-	text-align: center;
-	margin-bottom: 20px;
 }
 
 #post_title {
@@ -87,10 +73,14 @@ form.new-post {
 	color: #6b6b6b;
 }
 
-#post_content {
-	width: 80%;
+#post_content_md {
+	width: 90%;
 	color: #6b6b6b;
 	resize: vertical;
+}
+
+#post_category_list {
+	width: 60%;
 }
 
 div.actions {

@@ -1,7 +1,7 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :hashed_password, :salt, :second_name, :username, :password, :password_confirmation, :user_id
+  attr_accessible :first_name, :hashed_password, :salt, :second_name, :username, :password, :password_confirmation, :email, :bio
   has_many :posts, :dependent => :destroy
 
   validates :username, :presence => true, :uniqueness => true
@@ -9,9 +9,16 @@ class User < ActiveRecord::Base
   attr_accessor :password_confirmation
   attr_reader   :password
 
+  validates :email, :email => {:strict_mode => true}
+  
   validate  :password_must_be_present
 
   after_destroy :ensure_an_admin_remains
+
+  # change urls
+  def to_param
+    username
+  end
 
   def User.authenticate(username, password)
     if user = find_by_username(username)

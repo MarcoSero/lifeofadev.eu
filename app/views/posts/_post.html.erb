@@ -6,23 +6,24 @@
 
   <div id="info">Author: 
     <% @author = User.find_by_id(post.user_id) %>
-    <%= link_to( @author.username, user_url(@author) ) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to( @author.username, @author ) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <span class="label-calendar">&nbsp; &nbsp; &nbsp;<%=  post.created_at.strftime("%d %b %Y")  %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <% if request.env['PATH_INFO'] != post_path(post) %>
       <span class="label-comments">&nbsp; &nbsp; &nbsp;<%= link_to 'Comments', post_url(post) + "#disqus_thread"  %></span>
     <% end %>&nbsp;&nbsp;&nbsp;
 
-    <span class="label-categories">&nbsp; &nbsp; &nbsp;
-      <% categories = post.category_list %>
-      <% categories.each_with_index do |category, i| %>
-        <%=  link_to category, category_url(category) %>
-        <% if i != categories.length-1 %>
-          <%= ', ' %>
+    <% categories = post.category_list %>
+    <% if !categories.empty? %>
+      <span class="label-categories">&nbsp; &nbsp; &nbsp;  
+        <% categories.each_with_index do |category, i| %>
+          <%=  link_to category, category_url(category) %>
+          <% if i != categories.length-1 %>
+            <%= '' %>
+          <% end %>
         <% end %>
-      <% end %>
-
-    </span>
+      </span>
+    <% end %>
 
     <% if post.user_id == session[:user_id] %>
       <span style="margin-left=20px;"><%= link_to 'Edit', edit_post_path(post) %></span>

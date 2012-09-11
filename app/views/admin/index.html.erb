@@ -1,23 +1,9 @@
 <% content_for :title, "Admin" %>
 
-<% if flash[:notice] %>
-  <div class="alert alert-info">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= raw flash[:notice] %>
-  </div>
-<% end %>
-
-<% if flash[:alert] %>
-  <div class="alert alert-error">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= raw flash[:alert] %>
-  </div>
-<% end %>
-
 <div id="admin">
 <h1>Super Secret Administration Panel</h1>
 <br>
-<div class="float-right"><%= link_to 'New post', 'posts/new', :class => 'button icon add'  %></div>
+<div class="float-right"><%= link_to 'New post', 'posts/new', :class => 'button icon add'  %><%= link_to 'New user', 'users/new', :class => 'button icon user'  %></div>
 
 <div class="tabbable"> <!-- Only required for left/right tabs -->
   <ul class="nav nav-tabs">
@@ -53,6 +39,7 @@
       <table id="users">
         <tr>
           <th class="username">Username</th>
+          <th class="email">E-mail</th>
           <th class="first">First</th>
           <th class="second">Second</th>
         </tr>
@@ -60,6 +47,7 @@
         <% @users.each do |user| %>
           <tr>
             <td> <%= user.username %> </td>
+            <td> <%= user.email %> </td>
             <td> <%= user.first_name %> </td>
             <td> <%= user.second_name %> </td>
             <td><%= search_button_link_to 'Show', user %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910065323) do
+ActiveRecord::Schema.define(:version => 20120911102113) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120910065323) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.text     "slug"
+    t.text     "content_md"
   end
 
   create_table "taggings", :force => true do |t|
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20120910065323) do
     t.string   "salt"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "email"
+    t.text     "bio"
   end
 
 end
