@@ -40,11 +40,6 @@ set :scm_verbose, true
 set :use_sudo, false
 
 namespace :deploy do
-  desc "copy db config file"
-  task :seed do
-    run "ln -s ~/public_html/lifeofadev/database.yml #{release_path}/config/database.yml"
-  end
-
   desc "cause Passenger to initiate a restart"
   task :restart do
     run "touch #{current_path}/tmp/restart.txt" 
@@ -60,4 +55,11 @@ after "deploy:update_code", :bundle_install
 desc "install the necessary prerequisites"
 task :bundle_install, :roles => :app do
   run "cd #{release_path} && bundle install"
+end
+
+# copy db config
+after "deploy:update_code", :copy_db_config
+desc "copy db config file"
+task :copy_db_config do
+  run "ln -s ~/public_html/lifeofadev/database.yml #{release_path}/config/database.yml"
 end
