@@ -14,5 +14,8 @@
 /log/*.log
 /tmp
 
+# Ignore db config file
+/config/database.yml
+
 # Ignore all DS_STORE
 .DS_STORE
