@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20120911162727) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
     t.string   "email"
-    t.text     "bio",             :default => ""
-    t.text     "bio_md",          :default => ""
+    t.text     "bio", :default => ""
+    t.text     "bio_md", :default => ""
   end
 
 end
