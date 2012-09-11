@@ -5,9 +5,13 @@
   </div>
 
   <div id="info">
-    <div id="username"><%= user.username %></div>
+    <div id="username"><strong><%= link_to user.username, user %></strong></div>
     <div id="email"><%= mail_to user.email, nil, :replace_at => "_at_", :replace_dot => "_dot_", :class => "email" %></div>
-    <div id="posts">Posts: <%= Post.count(:conditions => "user_id = #{user.id}") %></div>
-    <div id="bio">About:<br> <%= user.bio %></div>
+    <div id="bio"><strong>About</strong>: <%= raw user.bio %></div>
   </div>
+
+  <% if session[:user_id] %>
+    <%= link_to 'edit', edit_user_path(user) %>
+  <% end %>
+
 </div>

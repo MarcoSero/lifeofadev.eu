@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("created_at DESC")
+    @posts = Post.order("created_at DESC").find_all_by_draft(false)
   
     respond_to do |format|
       format.html # index.html.erb
@@ -15,8 +15,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    #@post = Post.find(params[:id])
+    
     @post = Post.find_by_slug!(params[:id])
+
+    # not show drafts to visitors
+    if @post.draft && !session[:user_id]
+      not_found
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,7 +42,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    #@post = Post.find(params[:id])
     @post = Post.find_by_slug!(params[:id])
   end
 
@@ -65,11 +69,11 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to edit_post_url(@post), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render json: edit_post_url(@post).errors, status: :unprocessable_entity }
       end
     end
   end

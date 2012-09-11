@@ -11,6 +11,8 @@ body {
 #left {
 	float: left;
 	width: 250px;
+	position: fixed;
+	z-index: 1;
 }
 
 #center {

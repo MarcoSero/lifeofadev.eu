@@ -14,5 +14,6 @@
   <%= f.input :title, :placeholder => 'Title', :label => false %>
   <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => false %>
   <%= f.input :category_list, :placeholder => 'Categories separated by commas', :label => false %>
+  <%= f.input :draft %>
   <%= f.button :submit %>
 <% end %>

@@ -1,6 +1,8 @@
-<h1>Editing post</h1>
+<% content_for :title, "Edit post" %>
+<h1>Edit post</h1>
 
-<%= render 'form' %>
+<div id="post">
+  <div class="float-right" style="margin-top:12px;margin-right:23px"><%= link_to 'View', @post, :class => 'button icon search'  %></div>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+  <%= render 'form' %>
+</div>

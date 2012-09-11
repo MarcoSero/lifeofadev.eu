@@ -18,6 +18,7 @@
   font-weight: bold;
   font-family: 'Patua One', sans-serif;
   border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 30px;
   padding-bottom: 10px;
 }
 
@@ -63,7 +64,7 @@ blockquote {
 	background: url(tag.png) no-repeat;
 }
 
-.new_post {
+#post form {
 	padding-top: 10px;
 	text-align: center;
 }
@@ -85,4 +86,8 @@ blockquote {
 
 div.actions {
 	text-align: center;
+}
+
+#disqus_thread {
+	margin-top: 30px;
 }

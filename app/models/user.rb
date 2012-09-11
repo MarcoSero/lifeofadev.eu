@@ -1,7 +1,8 @@
 require 'digest/sha2'
+require 'rdiscount'
 
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :hashed_password, :salt, :second_name, :username, :password, :password_confirmation, :email, :bio
+  attr_accessible :first_name, :hashed_password, :salt, :second_name, :username, :password, :password_confirmation, :email, :bio, :bio_md
   has_many :posts, :dependent => :destroy
 
   validates :username, :presence => true, :uniqueness => true
@@ -14,6 +15,9 @@ class User < ActiveRecord::Base
   validate  :password_must_be_present
 
   after_destroy :ensure_an_admin_remains
+
+  before_create :bio_markdown_to_html
+  before_save :bio_markdown_to_html
 
   # change urls
   def to_param
@@ -53,8 +57,14 @@ class User < ActiveRecord::Base
     end
 
     def ensure_an_admin_remains
-    if User.count.zero?
-      raise "Can't delete last user"
+      if User.count.zero?
+        raise "Can't delete last user"
+      end
     end
-  end
+
+    def bio_markdown_to_html
+      markdown = RDiscount.new(self.bio_md)
+      self.bio = markdown.to_html 
+    end
+
 end

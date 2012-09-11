@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     User.find_by_id(session[:user_id])
   end
 
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
   protected
 
     def authorize
