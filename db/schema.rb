@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(:version => 20120911162727) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "user_id"
     t.text     "slug"
     t.text     "content_md"
-    t.boolean  "published",  :default => true
+    t.boolean  "published",  :default => false
   end
 
   create_table "taggings", :force => true do |t|
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20120911162727) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
     t.string   "email"
-    t.text     "bio", :default => ""
-    t.text     "bio_md", :default => ""
+    t.text     "bio"
+    t.text     "bio_md", :default => "That's my bio"
   end
 
 end

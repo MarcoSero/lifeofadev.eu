@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.create(username: 'marco', password: "marcosero", password_confirmation: "marcosero", email: "marco@marcosero.com")
+user = User.create(username: 'marco', password: "marcosero", password_confirmation: "marcosero", email: "marco@marcosero.com", bio_md: "That's my bio")
 
 Post.create(title: "Event Detection", content_md: "## DBSCAN Algorithm in Map/Reduce logic, implemented with Hadoop and MongoDB
 

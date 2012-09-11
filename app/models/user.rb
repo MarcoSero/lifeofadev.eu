@@ -63,8 +63,10 @@ class User < ActiveRecord::Base
     end
 
     def bio_markdown_to_html
-      markdown = RDiscount.new(self.bio_md)
-      self.bio = markdown.to_html 
+      if self.bio_md
+        markdown = RDiscount.new(self.bio_md)
+        self.bio = markdown.to_html 
+      end
     end
 
 end
