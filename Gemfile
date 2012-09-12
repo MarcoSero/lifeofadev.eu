@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem "rdiscount", "~> 1.6.8"
 
 group :production do
-  gem 'mysql'
+  gem 'mysql2'
 end
 
 # To use ActiveModel has_secure_password
