@@ -4,8 +4,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("created_at DESC").find_all_by_published(true)
-  
+    @posts = Post.find_all_by_published(true)
+    if @posts
+      @posts.sort_by(&:published_at)
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

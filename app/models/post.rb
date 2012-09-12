@@ -1,7 +1,7 @@
 require 'rdiscount'
 
 class Post < ActiveRecord::Base
-  attr_accessible :content, :title, :user_id, :category_list, :content_md, :published
+  attr_accessible :content, :title, :user_id, :category_list, :content_md, :published, :published_at
   belongs_to :user
 
   before_create :create_slug
@@ -9,6 +9,9 @@ class Post < ActiveRecord::Base
 
   before_create :content_markdown_to_html
   before_save :content_markdown_to_html
+
+  before_create :insert_publish_date
+  before_save :insert_publish_date
 
   # Alias for acts_as_taggable_on :tags
   # acts_as_taggable
@@ -30,6 +33,15 @@ class Post < ActiveRecord::Base
       if self.content_md
         markdown = RDiscount.new(self.content_md)
         self.content = markdown.to_html
+      end 
+    end
+
+    def insert_publish_date
+      if self.published
+        tmp = Post.find_by_id(self.id)
+        if !tmp.published_at
+          self.published_at = DateTime.current
+        end
       end 
     end
   

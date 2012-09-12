@@ -16,17 +16,23 @@
       <table id="posts">
         <tr>
           <th class="title">Title</th>
-          <th>Created</th>
-          <th>Updated</th>
           <th>Author</th>
+          <th>Published</th>
+          <th>Updated</th>
         </tr>
 
         <% @posts.each do |post| %>
           <tr>
             <td> <%= post.title %> </td>
-            <td> <%= post.created_at.strftime("%d/%m/%y") %> </td>
-            <td> <%= post.updated_at.strftime("%d/%m/%y") %> </td>
             <td> <%= User.find_by_id(post.user_id).username %> </td>
+            <td>
+            <% if post.published %>
+              <%= post.published_at.strftime("%d/%m/%y") %>
+            <% else %>
+              no yet
+            <% end %>
+            </td>
+            <td> <%= post.updated_at.strftime("%d/%m/%y") %> </td>
             <td><%= search_button_link_to 'Show', post %></td>
             <td><%= edit_button_link_to 'Edit', edit_post_path(post) %></td>
             <td><%= trash_button_link_to 'Destroy', post, :method => :delete, data: { confirm: 'Are you sure?' }  %></td>

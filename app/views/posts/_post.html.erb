@@ -1,6 +1,12 @@
 <div id="post">
     
-  <div id="title"><%= link_to(post.title, post) %></div>
+  <div id="title">
+    <%= link_to(post.title, post) %>
+
+    <% if post.user_id == session[:user_id] %>
+      <span style="margin-left=20px;float:right;"><%= link_to 'Edit', edit_post_path(post), :class => 'button icon edit' %></span>
+    <% end %>
+  </div>
   
   <div id="content"><%= raw post.content %></div>
 
@@ -23,10 +29,6 @@
           <% end %>
         <% end %>
       </span>
-    <% end %>
-
-    <% if post.user_id == session[:user_id] %>
-      <span style="margin-left=20px;"><%= link_to 'Edit', edit_post_path(post) %></span>
     <% end %>
   </div>
   

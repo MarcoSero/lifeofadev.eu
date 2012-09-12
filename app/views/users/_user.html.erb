@@ -6,12 +6,13 @@
 
   <div id="info">
     <div id="username"><strong><%= link_to user.username, user %></strong></div>
+    <div id="name"><%= user.first_name %> <%= user.second_name %></div>
     <div id="email"><%= mail_to user.email, nil, :replace_at => "_at_", :replace_dot => "_dot_", :class => "email" %></div>
     <div id="bio"><strong>About</strong>: <%= raw user.bio %></div>
   </div>
 
   <% if session[:user_id] %>
-    <%= link_to 'edit', edit_user_path(user) %>
+    <%= link_to 'Edit', edit_user_path(user), :class => 'button icon edit' %>
   <% end %>
 
 </div>
