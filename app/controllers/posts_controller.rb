@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.find_all_by_published(true)
     if @posts
-      @posts.sort_by(&:published_at)
+      @posts = @posts.sort_by(&:published_at).reverse!
     end
 
     respond_to do |format|

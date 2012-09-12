@@ -14,7 +14,7 @@
   <%= f.input :title, :placeholder => 'Title' %>
   <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => 'Content' %>
   <%= f.input :category_list, :placeholder => 'Categories separated by commas' %>
-  <%= f.input :published, :label => "Publish?" %>
+  <%= f.input :published, :label => "Publish?", :inline_label => "Whit this unchecked this post will be saved as draft" %>
   <%= f.input :user_id, :as => :hidden, :input_html => { :value => session[:user_id] } %>
-  <%= f.button :submit, :class => "button primary" %>
+  <%= f.button :submit, 'Save', :class => "button primary big" %>
 <% end %>
