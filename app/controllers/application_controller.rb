@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     User.find_by_id(session[:user_id])
   end
 
+  def current_url
+    "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  end
+
   def not_found
     raise ActionController::RoutingError.new('Not Found')
   end

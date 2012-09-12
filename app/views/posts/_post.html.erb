@@ -34,7 +34,7 @@
   
 
   
-  <% if request.env['PATH_INFO'] == post_path(post) %>
+  <% if "#{request.protocol}#{request.host_with_port}#{request.fullpath}" == post_url(post) %>
   <div id="disqus_thread"></div>
     <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
