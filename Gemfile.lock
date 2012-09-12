@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 7f8a1a093d660ed197c0a510dd1a71d05fb14522
+  specs:
+    paperclip (3.2.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (>= 0.0.2)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,6 +49,7 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    cocaine (0.3.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -151,6 +163,7 @@ DEPENDENCIES
   gravatar_image_tag
   jquery-rails
   mysql
+  paperclip!
   rails (= 3.2.8)
   rdiscount (~> 1.6.8)
   sass-rails (~> 3.2.3)

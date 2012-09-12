@@ -22,8 +22,6 @@ end
 
 gem 'jquery-rails'
 
-gem "css3buttons", "~> 1.0.1"
-
 gem "rdiscount", "~> 1.6.8"
 
 group :production do
@@ -49,8 +47,12 @@ gem 'acts-as-taggable-on', '~> 2.3.1'
 
 gem 'simple_form'
 
+gem "css3buttons", "~> 1.0.1"
+
 gem 'email_validator', :require => 'email_validator/strict'
 
 gem 'gravatar_image_tag'
 
 gem 'twitter-bootstrap-rails'
+
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"

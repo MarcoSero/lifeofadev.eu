@@ -2,6 +2,7 @@ require 'rdiscount'
 
 class Post < ActiveRecord::Base
   attr_accessible :content, :title, :user_id, :category_list, :content_md, :published, :published_at
+
   belongs_to :user
 
   before_create :create_slug

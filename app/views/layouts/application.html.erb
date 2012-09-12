@@ -39,13 +39,13 @@
 
     <% if session[:user_id] %>
       <div class="admin-button">
-        <% if "#{request.protocol}#{request.host_with_port}#{request.fullpath}" != new_post_url %>
+        <% if current_url != new_post_url %>
           <%= link_to 'New post', new_post_url, :class => 'button icon add' %>
         <% end %>
         <% if "#{request.protocol}#{request.host_with_port}#{request.fullpath}" != admin_url %>
           <%= link_to 'Admin', admin_url, :class => 'button icon home' %>
         <% end %>
-        <%= link_to 'Logout', logout_url, :method => :delete, :class => 'button danger' %>
+        <%= link_to 'Logout', logout_url, :method => :delete, :class => 'button icon arrowright danger' %>
       </div>
     <% end %>
 

@@ -10,7 +10,11 @@
   
   <div id="content"><%= raw post.content %></div>
 
-  <div id="info">Author: 
+  <div id="info">
+    <%= button_link_to 'Tweet', 'https://twitter.com/share?text=' + post.title + '&url='+current_url+'&via=LifeofaDev',
+        :class => 'button icon tweet', :target => "_blank" %>
+
+    Author:
     <% @author = User.find_by_id(post.user_id) %>
     <%= link_to( @author.username, @author ) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <span class="label-calendar">&nbsp; &nbsp; &nbsp;<%=  post.created_at.strftime("%d %b %Y")  %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -34,7 +38,7 @@
   
 
   
-  <% if "#{request.protocol}#{request.host_with_port}#{request.fullpath}" == post_url(post) %>
+  <% if current_url == post_url(post) %>
   <div id="disqus_thread"></div>
     <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

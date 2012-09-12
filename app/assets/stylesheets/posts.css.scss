@@ -92,3 +92,12 @@ div.actions {
 #disqus_thread {
 	margin-top: 30px;
 }
+
+.button.tweet.icon:before {
+	background: url(tweet.png);
+}
+.button.tweet.icon:hover:before,
+.button.tweet.icon:focus:before,
+.button.tweet.icon:active:before {
+	background: url(tweet.png);
+}
