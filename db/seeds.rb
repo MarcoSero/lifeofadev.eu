@@ -9,7 +9,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.create(username: 'marco', password: "marcosero", password_confirmation: "marcosero", email: "marco@marcosero.com", bio_md: "That's my bio")
+user = User.create(username: 'marco', password: "marcosero", password_confirmation: "marcosero", email: "marco@marcosero.com", bio_md: "I like to code and I'm interested in many fields of computer science and social media.
+ 
+Visit my [site](http://marcosero.com)  
+Fork my [projects](https://github.com/MarcoSero)  
+View my [photos](http://photo.marcosero.com)")
 
 Post.create(title: "Why start another blog?",
             user_id: user.id,

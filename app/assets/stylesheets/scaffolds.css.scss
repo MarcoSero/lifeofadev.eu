@@ -81,16 +81,25 @@ div.field {
 }
 
 #main-logo {
-	margin-right: 20px;
+	text-align: center;
 }
 
 #main-text	 {
 	float: none;
-	margin: 0 60px 0 0;
+	margin-left: 40px;
+	margin-right: 40px;
 	text-align: center;
 	font-size: 15px;
 	border-bottom: 1px dotted #d3d3d3;
 	padding-bottom: 20px;
+}
+
+#blog-info {
+	margin-top: 40px;
+	margin-left: 40px;
+	margin-right: 40px;
+	text-align: right;
+	font-size: 13px;
 }
 
 .admin-button {
@@ -98,7 +107,9 @@ div.field {
 }
 
 #footer {
+	margin-top: 80px;
 	font-size: 13px;
+	text-align: center;
 }
 
 .button-submit-centered {
