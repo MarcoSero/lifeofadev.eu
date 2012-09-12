@@ -42,6 +42,10 @@ blockquote {
   padding-left: 10px;
 }
 
+blockquote p {
+	font-size: 15px;
+}
+
 #post #info {
 	margin-top: 20px;
 	text-align: right;
@@ -91,6 +95,14 @@ div.actions {
 
 #disqus_thread {
 	margin-top: 30px;
+}
+
+div .tweet-button {
+	margin-top: 20px;
+	text-align: left;
+	font-size: 13px;
+	padding-bottom: 8px;
+	float: left;
 }
 
 .button.tweet.icon:before {

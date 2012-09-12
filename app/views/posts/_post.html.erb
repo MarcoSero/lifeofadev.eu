@@ -3,17 +3,19 @@
   <div id="title">
     <%= link_to(post.title, post) %>
 
-    <% if post.user_id == session[:user_id] %>
+    <% if session[:user_id] %>
       <span style="margin-left=20px;float:right;"><%= link_to 'Edit', edit_post_path(post), :class => 'button icon edit' %></span>
     <% end %>
   </div>
   
   <div id="content"><%= raw post.content %></div>
 
-  <div id="info">
+  <div class="tweet-button">
     <%= button_link_to 'Tweet', 'https://twitter.com/share?text=' + post.title + '&url='+current_url+'&via=LifeofaDev',
         :class => 'button icon tweet', :target => "_blank" %>
+  </div>
 
+  <div id="info">
     Author:
     <% @author = User.find_by_id(post.user_id) %>
     <%= link_to( @author.username, @author ) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

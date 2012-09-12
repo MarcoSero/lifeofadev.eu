@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
 
+  resources :assets
+
   get 'admin' => 'admin#index'
 
   controller :sessions do

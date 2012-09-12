@@ -19,8 +19,8 @@ class Post < ActiveRecord::Base
   acts_as_taggable_on :categories
   
   def to_param
-      slug
-    end
+    slug
+  end
 
   private
    
