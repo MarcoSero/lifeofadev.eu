@@ -11,7 +11,7 @@
   <div id="content"><%= raw post.content %></div>
 
   <div class="tweet-button">
-    <%= button_link_to 'Tweet', 'https://twitter.com/share?text=' + post.title + '&url='+"#{request.protocol}#{request.host_with_port}#{post.slug}"+'&via=LifeofaDev',
+    <%= button_link_to 'Tweet', 'https://twitter.com/share?text=' + post.title + '&url='+"#{request.protocol}#{request.host_with_port}/#{post.slug}"+'&via=LifeofaDev',
         :class => 'button icon tweet', :target => "_blank" %>
   </div>
 
