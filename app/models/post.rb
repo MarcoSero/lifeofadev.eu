@@ -21,7 +21,9 @@ class Post < ActiveRecord::Base
   private
    
     def create_slug
-      self.slug = self.title.parameterize
+      if self.title
+        self.slug = self.title.parameterize
+      end
     end
 
     def content_markdown_to_html

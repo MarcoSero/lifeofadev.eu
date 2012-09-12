@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessor :password_confirmation
   attr_reader   :password
 
-  validates :email, :email => {:strict_mode => true}
+  validates :email, :email => {:strict_mode => true}, :uniqueness => true
   
   validate  :password_must_be_present
 

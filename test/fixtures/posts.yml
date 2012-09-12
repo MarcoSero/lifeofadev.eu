@@ -2,10 +2,5 @@
 
 one:
   title: MyText
-  content: MyText
-  date: 2012-09-04 17:57:45
-
-two:
-  title: MyText
-  content: MyText
-  date: 2012-09-04 17:57:45
+  content_md: Hi there
+  published: false
