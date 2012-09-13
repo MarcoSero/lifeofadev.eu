@@ -44,13 +44,13 @@ pre {
 
 a {
   color: #0071BB;
-  &:visited {
+  }
+a:visited {
+    color: #0071BB;
+ }
+a:hover {
     color: #0071BB;
   }
-  &:hover {
-    color: #0071BB;
-  }
-}
 
 div {
   &.field, &.actions {
@@ -115,4 +115,8 @@ div.field {
 .button-submit-centered {
 	text-align: center;
 	margin-right: 100px;
+}
+
+.button {
+	color: #0071BB;
 }
