@@ -14,12 +14,14 @@ body {
 	position: fixed;
 	z-index: 1;
 	font-family: 'PT Sans', sans-serif;
+	z-index: 0;
 }
 
 #center {
 	float: right;
 	width: 700px;
 	padding-top: 20px;
+	z-index: 1;
 }
 
 h1 {
