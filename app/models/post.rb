@@ -36,10 +36,7 @@ class Post < ActiveRecord::Base
     def content_markdown_to_html
       if self.content_md
         markdown = RDiscount.new(self.content_md)
-        html_tmp = markdown.to_html
-        # make work jQuery Syntax Highlighter based on Google's Prettify
-        html_tmp = html_tmp.gsub(/<code>/, "<code class=\"highlight\">")
-        self.content = html_tmp
+        self.content = markdown.to_html
       end 
     end
 

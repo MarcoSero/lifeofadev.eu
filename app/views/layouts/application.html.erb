@@ -10,28 +10,9 @@
   <%= auto_discovery_link_tag :atom, "/feed" %>
   <%= auto_discovery_link_tag :rss, "/feed.rss" %>
 
-  <!-- Initialise jQuery Syntax Highlighter -->
-  <script type="text/javascript">
-    $.SyntaxHighlighter.init({
-      /**
-       * Whether or not we should wrap the code blocks lines, or have them scrollable.
-       */
-      'wrapLines': true,
-
-      /**
-       * Whether or not we should display line numbers next to the code blocks.
-       */
-      'lineNumbers': false,
-      /**
-       * The theme that should be used by our highlighted code blocks.
-       */
-      'theme': 'balupton',
-
-      /**
-       * The themes to load in for use with our highlighted code blocks.
-       */
-      'themes': ['balupton']
-    });
+  <script  type="text/javascript"> 
+    hljs.tabReplace = '<span class="indent">\t</span>';
+    hljs.initHighlightingOnLoad();
   </script>
 
 </head>
