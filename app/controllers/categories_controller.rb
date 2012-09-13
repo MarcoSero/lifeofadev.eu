@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category = params[:id]
     @posts = Post.tagged_with(params[:id]).order("created_at DESC")
 
     respond_to do |format|

@@ -19,7 +19,7 @@ Post.create(title: "Why start another blog?",
             user_id: user.id,
             published: true,
             published_at: DateTime.new(2012,4,24,17),
-            category_list: ["stuff"],
+            category_list: ["Stuff"],
             content_md: "That's the question I made myself: why should I start a new blog? The answer is easily explained: I want a place to share and discuss with any other developer of issues, events, great tutorial and all other stuffs that concern the world of the developers.
 
 I'm a developer but first of all a student so I'll want to write about all that affect me (and I hope you too) such as web technologies, mobile platforms, software engineering, user interface design, computer networks, security, artificial intelligence... and so on, exploring a lot of fields of programming and computer science.
@@ -86,7 +86,7 @@ Post.create(title: "Programming Languages Popularity",
             user_id: user.id,
             published: true,
             published_at: DateTime.new(2012,5,1,17),
-            category_list: ["stuff"],
+            category_list: ["Stuff"],
             content_md: "As developer I am always interested about programming languages popularity. It is a significant clue about the future and the impact they can have in the job market.
 Let's analyze some data!
 
@@ -168,7 +168,7 @@ Post.create(title: "Apple rejecting applications which use Dropbox",
             user_id: user.id,
             published: true,
             published_at: DateTime.new(2012,5,2,17),
-            category_list: ["stuff"],
+            category_list: ["Stuff"],
             content_md: "Seems [Apple is rejecting applications which use Dropbox](https://forums.dropbox.com/topic.php?id=59350). Why?
 
 > Apps that link to external mechanisms for purchases or subscriptions to be used in the app, such as a “buy” button that goes to a web site to purchase (for example) a digital book, will be rejected.

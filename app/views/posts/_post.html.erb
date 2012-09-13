@@ -19,7 +19,7 @@
     Author:
     <% @author = User.find_by_id(post.user_id) %>
     <%= link_to( @author.username, @author ) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <span class="label-calendar">&nbsp; &nbsp; &nbsp;<%=  post.created_at.strftime("%d %b %Y")  %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="label-calendar">&nbsp; &nbsp; &nbsp;<%=  post.published_at.strftime("%d %b %Y")  %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <% if request.env['PATH_INFO'] != post_path(post) %>
       <span class="label-comments">&nbsp; &nbsp; &nbsp;<%= link_to 'Comments', post_url(post) + "#disqus_thread"  %></span>

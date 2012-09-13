@@ -38,7 +38,7 @@ class Post < ActiveRecord::Base
     end
 
     def insert_publish_date
-      if self.published
+      if self.published && !self.published_at
         tmp = Post.find_by_id(self.id)
         if !tmp || !tmp.published_at
           self.published_at = DateTime.current
