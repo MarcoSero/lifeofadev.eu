@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :posts, :dependent => :destroy
 
   validates :username, :presence => true, :uniqueness => true
-  validates :password, :confirmation => true, :length => {:within => 8..40}
+  validates :password, :confirmation => true, :length => {:within => 8..40}, :if  => :password_changed?
   attr_accessor :password_confirmation
   attr_reader   :password
 
@@ -67,6 +67,10 @@ class User < ActiveRecord::Base
         markdown = RDiscount.new(self.bio_md)
         self.bio = markdown.to_html 
       end
+    end
+
+    def password_changed?
+      !@password.blank? or hashed_password.blank?
     end
 
 end

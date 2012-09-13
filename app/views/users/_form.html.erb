@@ -15,8 +15,13 @@
   <%= f.input :email, :placeholder => 'E-mail' %>
   <%= f.input :first_name, :placeholder => 'First name' %>
   <%= f.input :second_name, :placeholder => 'Second name' %>
-  <%= f.input :password, :placeholder => 'password' %>
-  <%= f.input :password_confirmation, :placeholder => 'password' %>
+  <% if current_url == new_user_url %>
+     <%= f.input :password, :placeholder => 'password' %>
+    <%= f.input :password_confirmation, :placeholder => 'password' %>
+  <% else %>
+    <%= f.input :password, :placeholder => 'Leave blank to keep the current', :label => "<strong>New</strong> password" %>
+    <%= f.input :password_confirmation, :placeholder => 'Leave blank to keep the current', :label => "Confirmation" %>
+  <% end %>
   <%= f.input :bio_md, :placeholder => 'Your biography in *markdown* sintax', :label => 'Biography' %>
   <div class="button-submit-centered">
     <%= f.button :submit, :class => "button primary" %>

@@ -8,6 +8,7 @@
 - Unit tests
 - Admin panel to manage posts and users
 - HTML and CSS
+- Syntax Highlighting
 
 
 ## TODO:
