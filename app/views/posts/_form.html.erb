@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('.editor').MarkdownEditor();
+  });
+</script>
+
 <% if @post.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -12,7 +18,18 @@
 
 <%= simple_form_for @post, :html => { :class => "form-horizontal", :multipart => true} do |f| %>
   <%= f.input :title, :placeholder => 'Title' %>
-  <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => 'Content' %>
+  <div class="editor">
+    <div class="controls clear-block hide-if-no-js button-group">
+        <a class="control c-bold button" accesskey="b"><strong>B</strong></a>
+        <a class="control c-italic button" accesskey="i"><em>I</em></a>
+        <a class="control c-link button" accesskey="a">Link</a>
+        <a class="control c-image button" accesskey="m">I<span>m</span>age</a>
+        <a class="control c-quote button" accesskey="q"><span>Q</span>uote</a>
+        <a class="control c-code button" accesskey="c"><span>C</span>ode</a>
+      </div>
+    <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => 'Content' %>
+  </div>
+
   <%= f.input :category_list, :placeholder => 'Categories separated by commas' %>
   <%= f.input :published, :label => "Publish?", :inline_label => "If unchecked this post will be saved as draft" %>
   <%= f.input :user_id, :as => :hidden, :input_html => { :value => session[:user_id] } %>
