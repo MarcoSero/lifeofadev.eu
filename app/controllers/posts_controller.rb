@@ -99,10 +99,13 @@ class PostsController < ApplicationController
     @title = "Life of a Dev"
 
     # the news items
-    @posts = Post.order("updated_at DESC")
+    @posts = Post.find_all_by_published(true)
+    if @posts
+      @posts = @posts.sort_by(&:published_at).reverse!
+    end
 
     # this will be our Feed's update timestamp
-    @updated = @posts.first.updated_at unless @posts.empty?
+    @updated = @posts.first.published_at unless @posts.empty?
 
     respond_to do |format|
       format.atom { render :layout => false }

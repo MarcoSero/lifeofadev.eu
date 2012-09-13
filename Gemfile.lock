@@ -9,14 +9,6 @@ GIT
       cocaine (>= 0.0.2)
       mime-types
 
-GIT
-  remote: https://github.com/rmontgomery429/google-code-prettify-rails
-  revision: fa2c786c8b39f6e69acab57a6b0722d494e1b5dd
-  specs:
-    google-code-prettify-rails (1.1.0)
-      railties (>= 3.2.0.beta, < 5.0)
-      thor (~> 0.14)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -168,7 +160,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   css3buttons (~> 1.0.1)
   email_validator
-  google-code-prettify-rails!
   gravatar_image_tag
   jquery-rails
   mysql2

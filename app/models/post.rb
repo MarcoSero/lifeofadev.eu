@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
   # acts_as_taggable
   acts_as_taggable_on :categories
 
-  validates :title, :presence => true
+  validates :title, :presence => true, :uniqueness => true
   validates :content_md, :presence => true
   
   def to_param
