@@ -56,3 +56,4 @@ gem 'gravatar_image_tag'
 gem 'twitter-bootstrap-rails'
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+

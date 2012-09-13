@@ -17,6 +17,9 @@ class Post < ActiveRecord::Base
   # Alias for acts_as_taggable_on :tags
   # acts_as_taggable
   acts_as_taggable_on :categories
+
+  validates :title, :presence => true
+  validates :content_md, :presence => true
   
   def to_param
     slug
@@ -33,7 +36,10 @@ class Post < ActiveRecord::Base
     def content_markdown_to_html
       if self.content_md
         markdown = RDiscount.new(self.content_md)
-        self.content = markdown.to_html
+        html_tmp = markdown.to_html
+        # make work jQuery Syntax Highlighter based on Google's Prettify
+        html_tmp = html_tmp.gsub(/<code>/, "<code class=\"highlight\">")
+        self.content = html_tmp
       end 
     end
 

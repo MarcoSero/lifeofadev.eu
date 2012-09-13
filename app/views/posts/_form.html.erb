@@ -5,9 +5,9 @@
 </script>
 
 <% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
+  <div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:
     <ul>
     <% @post.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -17,7 +17,7 @@
 <% end %>
 
 <%= simple_form_for @post, :html => { :class => "form-horizontal", :multipart => true} do |f| %>
-  <%= f.input :title, :placeholder => 'Title' %>
+  <%= f.input :title, :placeholder => 'Title', :required => false %>
   <div class="editor">
     <div class="controls clear-block hide-if-no-js button-group">
         <a class="control c-bold button" accesskey="b"><strong>B</strong></a>
@@ -27,7 +27,7 @@
         <a class="control c-quote button" accesskey="q"><span>Q</span>uote</a>
         <a class="control c-code button" accesskey="c"><span>C</span>ode</a>
       </div>
-    <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => 'Content' %>
+    <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => 'Content', :required => false %>
   </div>
 
   <%= f.input :category_list, :placeholder => 'Categories separated by commas' %>
