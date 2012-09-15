@@ -1,4 +1,4 @@
-# The source code of [lifeofadev.eu](http://beta.lifeofadev.eu)
+# The source code of [lifeofadev.eu](http://lifeofadev.eu)
 
 ## DONE:
 - Posts with \*\***markdown**\*\*, draft option
