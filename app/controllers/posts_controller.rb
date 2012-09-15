@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where("published = 't'").order("published_at DESC").paginate(:page => params[:page], :order=>'created_at desc',
+    @posts = Post.where(:published => true).order("published_at DESC").paginate(:page => params[:page], :order=>'created_at desc',
       :per_page => 5)
 
     if request.xhr?
