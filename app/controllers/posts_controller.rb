@@ -4,14 +4,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.find_all_by_published(true)
-    if @posts
-      @posts = @posts.sort_by(&:published_at).reverse!
-    end
+    @posts = Post.where("published = 't'").order("published_at DESC").paginate(:page => params[:page], :order=>'created_at desc',
+      :per_page => 5)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
+    if request.xhr?
+      sleep(2) # UX tip: make request a little bit slower to see loader :-)
+      render :partial => @posts
+    else
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @posts }
+      end
     end
   end
 

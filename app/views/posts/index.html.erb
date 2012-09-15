@@ -1,6 +1,9 @@
 <% content_for :title, "Life of a Dev" %>
 
-<%= render @posts %>
+<div id="results">
+<%= render :partial => 'post', :collection => @posts %>
+</div>
 
-
-
+<br>
+<%= will_paginate @orders %>
+<%= pageless(@posts.total_pages, posts_path) %>
