@@ -32,7 +32,7 @@
 
 #post #content {
   padding-left: 20px;
-  font: 16px 'PT Sans', sans-serif;
+  font: 'PT Sans', sans-serif;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 10px;
 }
@@ -120,4 +120,14 @@ div .tweet-button {
 
 .controls {
 	margin-bottom: 10px;
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+	#post #info {
+		display: none;
+	}
+	div .tweet-button {
+		display: none;
+	}
 }
