@@ -121,13 +121,3 @@ div .tweet-button {
 .controls {
 	margin-bottom: 10px;
 }
-
-/* Landscape phones and down */
-@media (max-width: 480px) { 
-	#post #info {
-		display: none;
-	}
-	div .tweet-button {
-		display: none;
-	}
-}

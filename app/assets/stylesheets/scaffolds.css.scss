@@ -169,12 +169,12 @@ div.field {
 		display: none;
 	}
 	p, ol, ul, td, li {
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 18px;
+		line-height: 27px;
 	}
 	blockquote p {
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 18px;
+		line-height: 27px;
 	}
 }
  
@@ -214,12 +214,19 @@ div.field {
 		display: none;
 	}
 	p, ol, ul, td, li {
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 18px;
+		line-height: 27px;
 	}
 	blockquote p {
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 18px;
+		line-height: 27px;
+	}
+	#post {
+		margin: 15px;
+		padding: 8px;
+	}
+	#post #content {
+		padding-left: 8px;
 	}
 }
  
@@ -259,18 +266,25 @@ div.field {
 		display: none;
 	}
 	p, ol, ul, td, li {
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 18px;
+		line-height: 27px;
 	}
 	blockquote p {
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 18px;
+		line-height: 27px;
 	}
 	#post #info {
 		display: none;
 	}
 	div .tweet-button {
 		display: none;
+	}
+	#post {
+		margin: 7px;
+		padding: 3px;
+	}
+	#post #content {
+		padding-left: 3px;
 	}
 }
 
