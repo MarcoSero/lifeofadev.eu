@@ -1,5 +1,3 @@
-
-
 body {
 	margin: 0 auto;
 	color: #4c4c4c;
@@ -228,6 +226,9 @@ div.field {
 	#post #content {
 		padding-left: 8px;
 	}
+	#post img {
+		max-width: 380px;
+	}
 }
  
 /* Landscape phones and down */
@@ -285,6 +286,9 @@ div.field {
 	}
 	#post #content {
 		padding-left: 3px;
+	}
+	#post img {
+		max-width: 280px;
 	}
 }
 
