@@ -2,6 +2,21 @@
   jQuery(document).ready(function($){
     $('.editor').MarkdownEditor();
   });
+
+  var lastKey;
+  // intercept CMD+S
+  $(document).keydown(function(event){
+    if ((lastKey == 91) && event.keyCode == 83) {
+      setTimeout("console.log('boom')", 50);
+      $("#save-button").trigger('click');
+      return false;
+    }
+    lastKey = (event.keyCode == 91) ? 91 : 0;
+  });
+  
+
+
+
 </script>
 
 <% if @post.errors.any? %>
@@ -16,7 +31,7 @@
   </div>
 <% end %>
 
-<%= simple_form_for @post, :html => { :class => "form-horizontal", :multipart => true} do |f| %>
+<%= simple_form_for @post, :remote => true, :html => { :class => "form-horizontal", :id => "edit-post-form", :multipart => true} do |f| %>
   <%= f.input :title, :placeholder => 'Title', :required => false %>
   <div class="editor">
     <div class="controls clear-block hide-if-no-js button-group">
@@ -34,5 +49,6 @@
   <%= f.input :published, :label => "Publish?", :inline_label => "If unchecked this post will be saved as draft" %>
   <%= f.input :user_id, :as => :hidden, :input_html => { :value => session[:user_id] } %>
     
-  <%= f.button :submit, 'Save', :class => "button primary big" %>
+  <% #f.button :submit, 'Save', :class => "button primary big", :id => 'save-button', :remote => true %>
+  <%= pill_primary__big_button_submit_tag '⌘ + S', :id => 'save-button' %>
 <% end %>

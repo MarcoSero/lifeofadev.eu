@@ -59,6 +59,7 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to edit_post_path(@post), notice: 'Post was successfully created.' }
         format.json { render json: edit_post_path(@post), status: :created, location: @post }
+        format.js   { render :nothing => true }
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -76,6 +77,7 @@ class PostsController < ApplicationController
       if @post.update_attributes(params[:post])
         format.html { redirect_to edit_post_url(@post), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
+        format.js   { render :nothing => true }
       else
         format.html { render action: "edit" }
         format.json { render json: edit_post_url(@post).errors, status: :unprocessable_entity }
