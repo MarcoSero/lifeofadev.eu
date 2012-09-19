@@ -7,16 +7,11 @@
   // intercept CMD+S
   $(document).keydown(function(event){
     if ((lastKey == 91) && event.keyCode == 83) {
-      setTimeout("console.log('boom')", 50);
       $("#save-button").trigger('click');
       return false;
     }
     lastKey = (event.keyCode == 91) ? 91 : 0;
   });
-  
-
-
-
 </script>
 
 <% if @post.errors.any? %>
