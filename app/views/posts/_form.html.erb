@@ -26,7 +26,7 @@
   </div>
 <% end %>
 
-<%= simple_form_for @post, :remote => true, :html => { :class => "form-horizontal", :id => "edit-post-form", :multipart => true} do |f| %>
+<%= simple_form_for @post, :html => { :class => "form-horizontal", :id => "edit-post-form", :multipart => true} do |f| %>
   <%= f.input :title, :placeholder => 'Title', :required => false %>
   <div class="editor">
     <div class="controls clear-block hide-if-no-js button-group">
