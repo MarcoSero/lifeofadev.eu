@@ -10,9 +10,8 @@
 - HTML and CSS
 - Syntax Highlighting
 - Pagination with asynchronous loading
-
+- Multiple images uploading with Paperclip
 
 ## TODO:
 
 - Functional and integration tests
-- Image uploading (preferably with JQuery)
