@@ -49,7 +49,14 @@ namespace :deploy do
   task :seed do
     run "cd #{current_path}; rake db:seed RAILS_ENV=production"
   end
+
+  desc "build missing paperclip styles"
+  task :build_missing_paperclip_styles, :roles => :app do
+    run "cd #{release_path}; RAILS_ENV=production bundle exec rake paperclip:refresh:missing_styles"
+  end
 end
+
+after("deploy:update_code", "deploy:build_missing_paperclip_styles")
 
 after "deploy:update_code", :bundle_install
 desc "install the necessary prerequisites"
