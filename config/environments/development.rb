@@ -36,5 +36,5 @@ Blog::Application.configure do
   config.assets.debug = true
 
   # To make work Paperclip
-  # Paperclip.options[:command_path] = "/usr/local/bin/"
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end

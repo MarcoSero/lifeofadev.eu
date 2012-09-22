@@ -3,8 +3,8 @@
     $('.editor').MarkdownEditor();
   });
 
-  var lastKey;
   // intercept CMD+S
+  var lastKey;
   $(document).keydown(function(event){
     if ((lastKey == 91) && event.keyCode == 83) {
       $("#save-button").trigger('click');
@@ -28,6 +28,7 @@
 
 <%= simple_form_for @post, :html => { :class => "form-horizontal", :id => "edit-post-form", :multipart => true} do |f| %>
   <%= f.input :title, :placeholder => 'Title', :required => false %>
+
   <div class="editor">
     <div class="controls clear-block hide-if-no-js button-group">
         <a class="control c-bold button" accesskey="b"><strong>B</strong></a>
@@ -43,7 +44,37 @@
   <%= f.input :category_list, :placeholder => 'Categories separated by commas' %>
   <%= f.input :published, :label => "Publish?", :inline_label => "If unchecked this post will be saved as draft" %>
   <%= f.input :user_id, :as => :hidden, :input_html => { :value => session[:user_id] } %>
-    
+  
+  <div id="paperclip">
+    <div class="new-paperclip">
+      <%= f.fields_for :assets do |asset| %>
+        <% if asset.object.new_record? %>
+          <%= asset.file_field :image %><br>
+        <% end %>
+      <% end %>
+    </div>
+    <% if @post && post_has_assets(@post.id) %>
+      <div class="old-paperclip">
+        <table>
+          <tr>
+            <th><strong>Thumb</strong></th>
+            <th><strong>Link</strong></th>
+            <th><strong>Delete?</strong></th>
+          </tr>
+          <%= f.fields_for :assets do |image_fields| %>
+            <tr>
+              <% unless image_fields.object.new_record? %>
+                <td><%= link_to( image_tag(image_fields.object.image.url(:thumb)), image_fields.object.image.url(:original) ) %></td>
+                <td><%= image_fields.object.image.url(:large) %></td>
+                <td style="text-align:center"><%= image_fields.check_box :_destroy %></td>
+              <% end %>
+            </tr> 
+          <% end %>
+        </table>
+      </div>
+    <% end %>
+  </div>
+
   <% #f.button :submit, 'Save', :class => "button primary big", :id => 'save-button', :remote => true %>
   <%= pill_primary__big_button_submit_tag '⌘ + S', :id => 'save-button' %>
 <% end %>

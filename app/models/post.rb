@@ -1,9 +1,11 @@
 require 'rdiscount'
 
 class Post < ActiveRecord::Base
-  attr_accessible :content, :title, :user_id, :category_list, :content_md, :published, :published_at
-
+  attr_accessible :content, :title, :user_id, :category_list, :content_md, :published, :published_at, :assets_attributes
   belongs_to :user
+
+  has_many :assets, :dependent => :destroy
+  accepts_nested_attributes_for :assets, :allow_destroy => true
 
   before_create :create_slug
   before_save :create_slug
@@ -20,6 +22,7 @@ class Post < ActiveRecord::Base
 
   validates :title, :presence => true, :uniqueness => true
   validates :content_md, :presence => true
+
   
   def to_param
     slug

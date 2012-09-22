@@ -56,3 +56,6 @@ gem 'gravatar_image_tag'
 gem 'twitter-bootstrap-rails'
 
 gem 'will_paginate'
+
+gem 'nifty-generators'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
