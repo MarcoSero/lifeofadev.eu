@@ -1,6 +1,6 @@
 
 set :user, 'ubuntu'
-set :domain, 'lifeofadev.marcosero.com'
+set :domain, 'lifeofadev.eu'
 set :application, 'lifeofadev'
 
 # the link of repository take advantage of file .ssh/config
