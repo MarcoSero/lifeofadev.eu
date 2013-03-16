@@ -10,6 +10,7 @@ gem 'email_validator', :require => 'email_validator/strict'
 gem 'gravatar_image_tag'
 gem 'coffee-rails', '~> 3.2.1'
 gem "therubyracer"
+gem "sass-rails"
 gem "less-rails"
 gem 'uglifier', '>= 1.0.3'
 gem 'coffee-rails', '~> 3.2.1'
