@@ -1,0 +1,19 @@
+<div id="session">
+  <h2>Please log in</h2>
+
+  <%= form_tag do %>
+    <div class="fields">
+      <div class="field">
+        <%= text_field_tag :username, params[:username], :placeholder => 'username' %>
+      </div>
+
+      <div class="field">
+        <%= password_field_tag :password, params[:password], :placeholder => 'password' %>
+      </div>
+    </div> 
+
+    <div class="submit-button">
+      <%= button_submit_tag "Login", :class => 'button-pill' %>
+    </div>
+  <% end %>
+</div>

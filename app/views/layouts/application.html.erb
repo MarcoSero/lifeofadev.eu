@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=h yield(:title) %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> <!-- RESPONSIVE ! -->
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= auto_discovery_link_tag :atom, "/feed" %>
+  <%= auto_discovery_link_tag :rss, "/feed.rss" %>
+
+  <script  type="text/javascript"> 
+    hljs.tabReplace = '<span class="indent">\t</span>';
+    hljs.initHighlightingOnLoad();
+  </script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32527712-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <div id="left">
+    <div id="main-logo"><%= link_to image_tag("logo.png", :border=>0, :class => 'logo'), root_url %> </div>
+    <div id="main-text"> Life and thoughts of a Developer (and student)</div>
+   
+    <div style="text-align:center;margin-top:20px;">
+        <a href="/feed"><img src="/assets/rss.png" width="35px" ></a>
+        <a href="https://twitter.com/LifeofaDev" target="_blank"><img src="/assets/twitter.png" width="35px" ></a>
+    </div>
+
+    <div id="blog-info">
+      This blog is entirely coded by Marco Sero in Ruby on Rails. <br>
+      If you are interested to contribute, or just curious, view the source code on <a href="https://github.com/MarcoSero/lifeofadev.eu" target="_blank">GitHub</a>.
+    </div>
+
+    <div id="footer">
+      © 2012 <em>Life of a Dev</em><br>
+    </div>
+  </div>
+
+  <div id="center">
+
+    <div id="flash">
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= raw flash[:notice] %>
+        </div>
+      <% end %>
+
+      <% if flash[:alert] %>
+        <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= raw flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
+
+    <% if session[:user_id] %>
+      <div class="admin-button">
+        <% if current_url != new_post_url %>
+          <%= link_to 'New post', new_post_url, :class => 'button icon add' %>
+        <% end %>
+        <% if "#{request.protocol}#{request.host_with_port}#{request.fullpath}" != admin_url %>
+          <%= link_to 'Admin', admin_url, :class => 'button icon home' %>
+        <% end %>
+        <%= link_to 'Logout', logout_url, :method => :delete, :class => 'button icon arrowright danger' %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+    
+  </div>
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#admin {
+  margin: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #d3d3d3;
+  box-shadow: 5px 5px 10px #d3d3d3;
+  -webkit-box-shadow: 5px 5px 10px #d3d3d3;
+}
+
+#admin table {
+	margin-left: 10px;
+}
+
+#admin th {
+	font-weight: bold;
+	text-align: left;
+}
+
+#admin th.title {
+	font-weight: bold;
+	width: 260px;
+}
+
+#admin th.username {
+	font-weight: bold;
+	width: 150px;
+}
+
+#admin th.first {
+	font-weight: bold;
+	width: 150px;
+}
+
+#admin th.second {
+	font-weight: bold;
+	width: 150px;
+}
+
+
+#admin th {
+	padding-right: 8px;
+	padding-bottom: 4px;
+}
+
+#admin td {
+	padding-right: 8px;
+	padding-bottom: 4px;
+}

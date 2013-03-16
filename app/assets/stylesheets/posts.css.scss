@@ -1,0 +1,142 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#post {
+  margin: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #d3d3d3;
+  box-shadow: 5px 5px 10px #d3d3d3;
+  -webkit-box-shadow: 5px 5px 10px #d3d3d3;
+}
+
+#post #title {
+  margin-bottom: 10px;
+  color: #393939;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 20px;
+	font: bold 2em/30px 'Patua One', sans-serif;
+}
+
+#post #title a {
+  text-decoration: none;
+  color: #555;
+}
+
+#post #title a:hover {
+  text-decoration: none;
+  color: #0071BB;
+}
+
+#post #content {
+  padding-left: 20px;
+  font: 'PT Sans', sans-serif;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 10px;
+}
+
+#post img {
+	max-width: 550px;
+}
+
+blockquote {
+  border-left: 8px solid #0071BB;
+  padding-left: 10px;
+}
+
+blockquote p {
+	font-size: 15px;
+}
+
+#post #info {
+	margin-top: 20px;
+	text-align: right;
+	font-size: 13px;
+	padding-bottom: 8px;
+}
+
+.label-comments {
+	background: url(comments.png) no-repeat;
+}
+
+.label-calendar {
+	background: url(calendar.png) no-repeat;
+}
+
+.label-categories {
+	background: url(tag.png) no-repeat;
+}
+
+#post form {
+	padding-top: 10px;
+	text-align: center;
+}
+
+#post_title {
+	width: 70%;
+	color: #6b6b6b;
+}
+
+#post_content_md {
+	width: 90%;
+	color: #6b6b6b;
+	resize: vertical;
+}
+
+#post_category_list {
+	width: 60%;
+}
+
+#post_published {
+	margin-left: 40px;
+}
+
+div.actions {
+	text-align: center;
+}
+
+#disqus_thread {
+	margin-top: 30px;
+}
+
+div .tweet-button {
+	margin-top: 20px;
+	text-align: left;
+	font-size: 13px;
+	padding-bottom: 8px;
+	float: left;
+}
+
+.button.tweet.icon:before {
+	background: url(tweet.png);
+}
+.button.tweet.icon:hover:before,
+.button.tweet.icon:focus:before,
+.button.tweet.icon:active:before {
+	background: url(tweet.png);
+}
+
+.controls {
+	margin-bottom: 10px;
+}
+
+#paperclip {
+	margin: 30px;
+	text-align: center;
+}
+.new-paperclip input {
+}
+
+.old-paperclip table {
+	margin-top: 30px;
+	text-align: left;
+	width: 100%;
+}
+
+#post table tr th {
+	padding-bottom: 10px;
+}
+#post table tr td {
+	padding-bottom: 5px;
+}

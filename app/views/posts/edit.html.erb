@@ -1,0 +1,10 @@
+<% content_for :title, "Edit post" %>
+<h1>Edit post</h1>
+
+<div id="post">
+  <div class="float-right" style="margin-top:12px;margin-right:23px">
+    <%= link_to 'View', @post, :class => 'button icon search', :target => '_blank'  %>
+  </div>
+
+  <%= render 'form' %>
+</div>

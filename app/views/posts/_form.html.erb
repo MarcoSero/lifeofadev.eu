@@ -1,0 +1,80 @@
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('.editor').MarkdownEditor();
+  });
+
+  // intercept CMD+S
+  var lastKey;
+  $(document).keydown(function(event){
+    if ((lastKey == 91) && event.keyCode == 83) {
+      $("#save-button").trigger('click');
+      return false;
+    }
+    lastKey = (event.keyCode == 91) ? 91 : 0;
+  });
+</script>
+
+<% if @post.errors.any? %>
+  <div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= simple_form_for @post, :html => { :class => "form-horizontal", :id => "edit-post-form", :multipart => true} do |f| %>
+  <%= f.input :title, :placeholder => 'Title', :required => false %>
+
+  <div class="editor">
+    <div class="controls clear-block hide-if-no-js button-group">
+        <a class="control c-bold button" accesskey="b"><strong>B</strong></a>
+        <a class="control c-italic button" accesskey="i"><em>I</em></a>
+        <a class="control c-link button" accesskey="a">Link</a>
+        <a class="control c-image button" accesskey="m">I<span>m</span>age</a>
+        <a class="control c-quote button" accesskey="q"><span>Q</span>uote</a>
+        <a class="control c-code button" accesskey="c"><span>C</span>ode</a>
+      </div>
+    <%= f.input :content_md, :placeholder => 'Post in *markdown* syntax post here', :html => { :class => "post_content"}, :label => 'Content', :required => false %>
+  </div>
+
+  <%= f.input :category_list, :placeholder => 'Categories separated by commas' %>
+  <%= f.input :published, :label => "Publish?", :inline_label => "If unchecked this post will be saved as draft" %>
+  <%= f.input :user_id, :as => :hidden, :input_html => { :value => session[:user_id] } %>
+  
+  <div id="paperclip">
+    <div class="new-paperclip">
+      <%= f.fields_for :assets do |asset| %>
+        <% if asset.object.new_record? %>
+          <%= asset.file_field :image %><br>
+        <% end %>
+      <% end %>
+    </div>
+    <% if @post && post_has_assets(@post.id) %>
+      <div class="old-paperclip">
+        <table>
+          <tr>
+            <th><strong>Thumb</strong></th>
+            <th><strong>Link</strong></th>
+            <th><strong>Delete?</strong></th>
+          </tr>
+          <%= f.fields_for :assets do |image_fields| %>
+            <tr>
+              <% unless image_fields.object.new_record? %>
+                <td><%= link_to( image_tag(image_fields.object.image.url(:thumb)), image_fields.object.image.url(:original) ) %></td>
+                <td><%= image_fields.object.image.url(:large) %></td>
+                <td style="text-align:center"><%= image_fields.check_box :_destroy %></td>
+              <% end %>
+            </tr> 
+          <% end %>
+        </table>
+      </div>
+    <% end %>
+  </div>
+
+  <% #f.button :submit, 'Save', :class => "button primary big", :id => 'save-button', :remote => true %>
+  <%= pill_primary__big_button_submit_tag '⌘ + S', :id => 'save-button' %>
+<% end %>
