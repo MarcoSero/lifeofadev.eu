@@ -1,0 +1,1950 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:30:50', '2012-10-04 13:30:50', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:30:50', '2012-10-04 13:30:50', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 'f', '2012-10-04 13:30:50', '2012-10-04 13:30:50', 980190962)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:30:50', '2012-10-04 13:30:50', 980190962)
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (11.9ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.1ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (36.4ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:30:50 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:30:50 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.1ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:30:50 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:30:50 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:30:50 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "448fd184cd5a19a5fec345a1115bfc9aef608478bc30542d6c34bf1a3787429b"], ["salt", "702502064134800.026355507271352385"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:30:50 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "040585c233068daf85250889d7ff5ced3fa21bc6dd7fd776246b6b89d42c4ebc"], ["salt", "702502083756200.15822056843294385"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "142e98ffe8c16e0511c1c93f883795c4b965b1741f738153d21d1cee989e2e16"], ["salt", "702502084180800.19887824048918357"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "15f090f2fb0707db1b4b53d5b307d8638a18d7a280e5515b308653d9914b3c11"], ["salt", "702502079029200.8627068737248027"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'fewfwecwecw' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "d457d317ed4cb9be1fbdac7b4def38a18b14c0bcd3cd03b1bd62c404d3d63fc2"], ["salt", "702502074422400.59990461904908"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "ee290f072e9c2740079680110f1ad2f8ce7f1db8010eac34eab9caa200b40593"], ["salt", "702502013841400.9699070358284246"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:30:51 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:30:54', '2012-10-04 13:30:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:30:54', '2012-10-04 13:30:54', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 'f', '2012-10-04 13:30:54', '2012-10-04 13:30:54', 980190962)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:30:54', '2012-10-04 13:30:54', 980190962)
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0
+  Rendered posts/_post.html.erb (0.0ms)
+Completed 200 OK in 75ms (Views: 74.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"username"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"dave"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:31:12', '2012-10-04 13:31:12', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:31:12', '2012-10-04 13:31:12', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 'f', '2012-10-04 13:31:12', '2012-10-04 13:31:12', 980190962)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:31:12', '2012-10-04 13:31:12', 980190962)
+  [1m[36m (60.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.1ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "5fa06f0fba4545a39fe23323424d190beb972a970451b7649df755de7e47aba8"], ["salt", "702587786807600.02278714131216486"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "44ba9a98b7f8f19e1fd3ce3cdccdeb53ce2e393c955ade4513559862eb9dbb6f"], ["salt", "702587789414800.8634807062964222"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "11f8e9cb9c7dbc88228174c7aa43eae7ce7eab0fe9c9799ac5136c9d238b851a"], ["salt", "702587786333600.6131032738038582"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "52b47b61f014f02282187fcecfe9c2e79ad1718facee08b10d1b8850385e281c"], ["salt", "702587787368000.015527769875564923"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'fewfwecwecw' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (3.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "7c279d3a2929269b0eab2ce0f89dd098fdae0465c0cbc51ac95e2154fc7ca25a"], ["salt", "702587785494600.026500178807013275"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (4.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "de9766cd5e232df081260d97deb8149e7f5e5576f42b926d51db5dc051287234"], ["salt", "702587783561600.013873514342394366"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:31:12 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:33:20', '2012-10-04 13:33:20', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:33:20', '2012-10-04 13:33:20', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 'f', '2012-10-04 13:33:20', '2012-10-04 13:33:20', 980190962)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:33:20', '2012-10-04 13:33:20', 980190962)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0
+  Rendered posts/_post.html.erb (0.0ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"username"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"dave"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:38:00', '2012-10-04 13:38:00', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:38:00', '2012-10-04 13:38:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 'f', '2012-10-04 13:38:00', '2012-10-04 13:38:00', 980190962)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:38:00', '2012-10-04 13:38:00', 980190962)
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.1ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (5.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "c719fe15eade092d5eb149187f34563c71c7740e46adfb1f60f4b2591a92608d"], ["salt", "702434645952800.6685898308818162"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "1dacc1ca1e49516d21d63f76664278854c9f13c2c4adff9dfd96cda7c58367e6"], ["salt", "702434661526400.14201934825499984"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "35b72ceb2ee338e384b67f6c81a6258fad4ae01e7b8031e7a7504ab55f7c284e"], ["salt", "702434661951200.19671403965559764"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (2.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "154ee0667620bdddb9a167a07dbe62ad18bc6a5a9d4d1e6825f5ef56d355235b"], ["salt", "702434647309600.9610019016312431"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'fewfwecwecw' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "7e0ce31808df6b16a08cd8a9dc09318b54357e772d1f16c66aa176e9e7ee2059"], ["salt", "702434648209600.3589130930892038"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.7ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "f1ff467032a31c7a7ad9bd90e9075ab36c2e067f43e887ca1e25fe371766244a"], ["salt", "702434652564200.03022809137938276"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (2.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "179dab6ac43f6d16379daf85dd4a2622eced132e71941d2f44185856b2a5aac2"], ["salt", "702434670864400.5072902435066549"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:38:00 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (3.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:39:45', '2012-10-04 13:39:45', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:39:45', '2012-10-04 13:39:45', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 'f', '2012-10-04 13:39:45', '2012-10-04 13:39:45', 980190962)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:39:45', '2012-10-04 13:39:45', 980190962)
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.1ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "2c2153baaf2388674b099caa83ecf12d9689ec3c694502fefabe63165fc9c677"], ["salt", "702991319538800.5848705668909113"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "23d49dcf9228ce6f6427bcf972b8f74ed9b8a7b5c4dd3b6e98db5f2c19b868e5"], ["salt", "702991335303600.3109675810523522"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "788be247de780b2faa927accdbae857384a5fa6f48b601d93e33b20afd0563af"], ["salt", "702991345064600.35607519392414033"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (3.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "874669fabf8d137e64783ae1cb155df461427e3f670e3b97610c1d7c82f8aaaa"], ["salt", "702991333165000.9616923841602839"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'fewfwecwecw' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "ad3c60688015cc5088a6211b9e44ea92e09591e0a6b16c539996731e1439a048"], ["salt", "702991343577600.2765076554364607"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "73dcfd3d45be8bd83c36589cfd150931473db26b33078076e10a4f5ff64a7b28"], ["salt", "702991337610400.7646951783007968"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "5fffe5faf6b00c5a5e7cfa752558f7dbdcdb544703c8186c30e4c3f0a5d9d3ce"], ["salt", "702991327223000.9322446583386041"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:39:45 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:40:35', '2012-10-04 13:40:35', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:40:35', '2012-10-04 13:40:35', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 'f', '2012-10-04 13:40:35', '2012-10-04 13:40:35', 980190962)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:40:35', '2012-10-04 13:40:35', 980190962)
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.1ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "9eca276b25c0993bb06c05a7a13a1cf4c409551b96be75a85fbe5ff9ca4b3c0f"], ["salt", "703499280527000.7141984159915796"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "9885101eaf4ceadfcfa7ed40f39ccdd29ee44d5eebf21c145a0b63c2219da3c7"], ["salt", "703499270687800.20757428460105165"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "e2d9a01320bfbaf627fbd6cd7ea548248b050baaf3bcaf60cdc80191b007085c"], ["salt", "703499268990200.20667127810670027"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "7896d0c0e9b7a5ed28545b47a646bdfed84a7dc73109de2931cb9da20c21b135"], ["salt", "703499277045600.597192473515842"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'fewfwecwecw' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "e9a5ee682f35a1385f213a1e1441d202d57a78ad79e89179254b133c30aa10fc"], ["salt", "703499277945600.578064015315115"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "435a751c202dd54f4c113d513bfe3c8a9ba82a68406d97b53e2d808d3fc1ca91"], ["salt", "703499261643400.4652397975826732"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (2.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "db4a162a9c13be49f5df26f6180f103dd7a691b0a1e5eed1da270e29892dc255"], ["salt", "703499259931800.4801192113822501"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:40:35 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (3.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:41:19', '2012-10-04 13:41:19', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:41:19', '2012-10-04 13:41:19', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 'f', '2012-10-04 13:41:19', '2012-10-04 13:41:19', 980190962)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:41:19', '2012-10-04 13:41:19', 980190962)
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.1ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'Ciao' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["published", false], ["published_at", nil], ["slug", "ciao"], ["title", "Ciao"], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (4.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "331b41e1b1ecbd1fce01b47783981e480711f194f315c6db4cca91e9d11edba0"], ["salt", "703147281997000.4689429047896544"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "9694394bfc80fe2fe50d1279e02cf9657a041391e8511006bbbb46e24b49664a"], ["salt", "703147370459400.7749663514453425"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35m (3.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "d8fcbba5dc17d946eeb0da39a2ed36f66db047832465a834d96e0380acaa9afb"], ["salt", "703147376971800.4322764184295407"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (2.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "3c559469fef1d75756cc2aef4f6ea5862fcc03c4ffc60321a292e4eb45479d2a"], ["salt", "703147363147000.793280361148524"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'fewfwecwecw' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (2.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "c15ed909fc67d58df591d1d1cbc44d603776db37627692046b300461cb700a85"], ["salt", "703147364047000.3783078410600835"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 980190963
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "777be28c35f81dd126562730007c49dfe145e37e6f0b9627442af44156fa133d"], ["salt", "703147286583200.9870504656176584"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["username", "marco"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (2.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova@prova.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `hashed_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("bio", "bio_md", "created_at", "email", "first_name", "hashed_password", "salt", "second_name", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "\n"], ["bio_md", ""], ["created_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["email", "prova@prova.com"], ["first_name", nil], ["hashed_password", "e070bd54e95e50e3fa8ac7aec028034cca4b9cc40bd5e98b52528a0655e6a3b1"], ["salt", "703147298032800.41735904244544675"], ["second_name", nil], ["updated_at", Thu, 04 Oct 2012 13:41:20 UTC +00:00], ["username", "marco"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'marco' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'prova2@prova.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (3.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:47:19', '2012-10-04 13:47:19', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:47:19', '2012-10-04 13:47:19', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', '2012-10-04 13:47:19', '2012-10-04 13:47:19', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', '2012-10-04 13:47:19', '2012-10-04 13:47:19', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:47:19', '2012-10-04 13:47:19', 980190962)[0m
+  [1m[35m (10.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0[0m
+  Rendered posts/_post.html.erb (14.2ms)
+Completed 500 Internal Server Error in 61ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1[0m
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1[0m
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"dave"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"username"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"dave"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:48:54', '2012-10-04 13:48:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:48:54', '2012-10-04 13:48:54', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', '2012-10-04 13:48:54', '2012-10-04 13:48:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', '2012-10-04 13:48:54', '2012-10-04 13:48:54', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:48:54', '2012-10-04 13:48:54', 980190962)[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 44ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:49:14', '2012-10-04 13:49:14', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:49:14', '2012-10-04 13:49:14', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', '2012-10-04 13:49:14', '2012-10-04 13:49:14', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', '2012-10-04 13:49:14', '2012-10-04 13:49:14', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:49:14', '2012-10-04 13:49:14', 980190962)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0
+  Rendered posts/_post.html.erb (5.9ms)
+Completed 500 Internal Server Error in 45ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:49:51', '2012-10-04 13:49:51', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:49:51', '2012-10-04 13:49:51', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', '2012-10-04 13:49:51', '2012-10-04 13:49:51', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', '2012-10-04 13:49:51', '2012-10-04 13:49:51', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:49:51', '2012-10-04 13:49:51', 980190962)[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPost Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "posts" WHERE ("posts"."title" = 'MyText' AND "posts"."id" != 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 980190962 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "posts" SET "slug" = 'mytext', "content" = '<p>Hi there</p>
+', "published_at" = '2012-10-04 13:49:51.000000', "updated_at" = '2012-10-04 13:49:51.822225' WHERE "posts"."id" = 980190962[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered posts/_post.html.erb (6.9ms)
+Completed 500 Internal Server Error in 50ms
+  [1m[36m (18.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:51:17', '2012-10-04 13:51:17', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:51:17', '2012-10-04 13:51:17', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:51:17', '2012-10-04 13:51:17', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:51:17', '2012-10-04 13:51:17', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:51:17', '2012-10-04 13:51:17', 980190962)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 17ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:52:45', '2012-10-04 13:52:45', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:52:45', '2012-10-04 13:52:45', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:52:45', '2012-10-04 13:52:45', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:52:45', '2012-10-04 13:52:45', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:52:45', '2012-10-04 13:52:45', 980190962)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 42ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:54:30', '2012-10-04 13:54:30', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:54:30', '2012-10-04 13:54:30', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:54:30', '2012-10-04 13:54:30', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:54:30', '2012-10-04 13:54:30', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:54:30', '2012-10-04 13:54:30', 980190962)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPost Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "posts" WHERE ("posts"."title" = 'MyText' AND "posts"."id" != 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 980190962 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "posts" SET "slug" = 'mytext', "content" = '<p>Hi there</p>
+', "published_at" = '2012-10-04 13:54:30.000000', "updated_at" = '2012-10-04 13:54:30.297296' WHERE "posts"."id" = 980190962[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered posts/_post.html.erb (7.6ms)
+Completed 500 Internal Server Error in 56ms
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:55:14', '2012-10-04 13:55:14', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:55:14', '2012-10-04 13:55:14', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:55:14', '2012-10-04 13:55:14', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:55:14', '2012-10-04 13:55:14', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:55:14', '2012-10-04 13:55:14', 980190962)[0m
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPost Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "posts" WHERE ("posts"."title" = 'MyText' AND "posts"."id" != 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 980190962 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "posts" SET "slug" = 'mytext', "content" = '<p>Hi there</p>
+', "published_at" = '2012-10-04 13:55:14.000000', "updated_at" = '2012-10-04 13:55:14.666168' WHERE "posts"."id" = 980190962[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered posts/_post.html.erb (6.9ms)
+Completed 500 Internal Server Error in 51ms
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:56:08', '2012-10-04 13:56:08', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:56:08', '2012-10-04 13:56:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:56:08', '2012-10-04 13:56:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:56:08', '2012-10-04 13:56:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:56:08', '2012-10-04 13:56:08', 980190962)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPost Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "posts" WHERE ("posts"."title" = 'MyText' AND "posts"."id" != 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 980190962 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "posts" SET "slug" = 'mytext', "content" = '<p>Hi there</p>
+', "published_at" = '2012-10-04 13:56:08.000000', "updated_at" = '2012-10-04 13:56:08.383626' WHERE "posts"."id" = 980190962[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered posts/_post.html.erb (8.5ms)
+Completed 500 Internal Server Error in 54ms
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:57:02', '2012-10-04 13:57:02', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:57:02', '2012-10-04 13:57:02', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:57:02', '2012-10-04 13:57:02', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:57:02', '2012-10-04 13:57:02', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:57:02', '2012-10-04 13:57:02', 980190962)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:57:23', '2012-10-04 13:57:23', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:57:23', '2012-10-04 13:57:23', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:57:23', '2012-10-04 13:57:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:57:23', '2012-10-04 13:57:23', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:57:23', '2012-10-04 13:57:23', 980190962)[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'MyText' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0
+  Rendered posts/_post.html.erb (5.8ms)
+Completed 500 Internal Server Error in 22ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:58:23', '2012-10-04 13:58:23', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:58:23', '2012-10-04 13:58:23', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:58:23', '2012-10-04 13:58:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:58:23', '2012-10-04 13:58:23', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:58:23', '2012-10-04 13:58:23', 980190962)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 42ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:58:47', '2012-10-04 13:58:47', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 13:58:47', '2012-10-04 13:58:47', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 13:58:47', '2012-10-04 13:58:47', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 13:58:47', '2012-10-04 13:58:47', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 13:58:47', '2012-10-04 13:58:47', 980190962)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.1ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'MyText' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0
+  Rendered posts/_post.html.erb (5.4ms)
+Completed 500 Internal Server Error in 47ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:06:47', '2012-10-04 14:06:47', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:06:47', '2012-10-04 14:06:47', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 14:06:47', '2012-10-04 14:06:47', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 14:06:47', '2012-10-04 14:06:47', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 14:06:47', '2012-10-04 14:06:47', 980190962)[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'MyText' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0
+  Rendered posts/_post.html.erb (6.7ms)
+Completed 500 Internal Server Error in 52ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:07:20', '2012-10-04 14:07:20', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:07:20', '2012-10-04 14:07:20', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 14:07:20', '2012-10-04 14:07:20', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 14:07:20', '2012-10-04 14:07:20', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 14:07:20', '2012-10-04 14:07:20', 980190962)[0m
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'MyText' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1[0m
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#new as HTML
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1[0m
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:07:51', '2012-10-04 14:07:51', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:07:51', '2012-10-04 14:07:51', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 14:07:51', '2012-10-04 14:07:51', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 14:07:51', '2012-10-04 14:07:51', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 14:07:51', '2012-10-04 14:07:51', 980190962)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPost Exists (0.2ms)[0m  SELECT 1 AS one FROM "posts" WHERE "posts"."title" = 'MyText3' LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("content", "content_md", "created_at", "published", "published_at", "slug", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["content", "<p>Hi there</p>\n"], ["content_md", "Hi there"], ["created_at", Thu, 04 Oct 2012 14:07:51 UTC +00:00], ["published", true], ["published_at", Thu, 04 Oct 2012 14:07:51 UTC +00:00], ["slug", "mytext3"], ["title", "MyText3"], ["updated_at", Thu, 04 Oct 2012 14:07:51 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."published" = 't' ORDER BY published_at DESC, created_at desc LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered posts/_post.html.erb (7.5ms)
+Completed 500 Internal Server Error in 54ms
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1[0m
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#new as HTML
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1[0m
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:08:36', '2012-10-04 14:08:36', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:08:36', '2012-10-04 14:08:36', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 14:08:36', '2012-10-04 14:08:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 14:08:36', '2012-10-04 14:08:36', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 14:08:36', '2012-10-04 14:08:36', 980190962)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 42ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "assets"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:13:00', '2012-10-04 14:13:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "assets" ("post_id", "created_at", "updated_at", "id") VALUES (1, '2012-10-04 14:13:00', '2012-10-04 14:13:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 'Hi there', 't', 1, '2012-10-04 14:13:00', '2012-10-04 14:13:00', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "content_md", "published", "user_id", "created_at", "updated_at", "id") VALUES ('MyText2', 'Hi there', 'f', 1, '2012-10-04 14:13:00', '2012-10-04 14:13:00', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("username", "hashed_password", "salt", "created_at", "updated_at", "id") VALUES ('dave', 'b181c05798885067ad43cc2311d83615d548ab78a59be66a0ec714b348e4b73c', 'NaCl', '2012-10-04 14:13:00', '2012-10-04 14:13:00', 980190962)[0m
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"dave", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'dave' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://test.host/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
