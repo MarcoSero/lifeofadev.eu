@@ -28,21 +28,6 @@ group :production do
   gem 'mysql2'
 end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
 gem 'simple_form'
