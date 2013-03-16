@@ -45031,3 +45031,4 @@ Served asset /rss.png - 304 Not Modified (0ms)
 Started GET "/assets/twitter.png" for 127.0.0.1 at 2012-10-10 18:30:09 +0200
 Served asset /twitter.png - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
